@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>
+            IS371 Exercise 5
+        </title>
+    </head>
+    <body style="margin: 0;">
+        <form>
+            <fieldset>
+                <legend>Contact Details</legend>
+
+                <table style="background: lightgrey;">
+                    <tr>
+                        <td>
+                            Name:
+                        </td>
+                        <td>
+                            <input type="text" size="10" maxlength="40" name="name"><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cell:
+                        </td>
+                        <td>
+                            <input type="text" size="10" maxlength="40" name="cell"><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email:
+                        </td>
+                        <td>
+                            <input type="text" size="10" maxlength="40" name="email"><br/>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Review</legend>
+
+                Would you Visit Again?<br/>
+                <input type="radio" name="again" value="yes">Yes
+                <input type="radio" name="again" value="no">No
+                <input type="radio" name="again" value="maybe">Maybe<br/><br/>
+
+                How did you rate our service?<br/>
+                <input type="radio" name="rate" value="1">Excellent
+                <input type="radio" name="rate" value="0">Fair
+                <input type="radio" name="rate" value="-1">Poor<br/><br/>
+
+                How did you hear about us?
+                <select name="hear">
+                    <option>Choose One</option>
+                    <option>Google Search</option>
+                    <option>YELP</option>
+                    <option>Word of Mouth</option>
+                    <option>Others</option>
+                </select><br/><br/>
+
+                Comments:<br/>
+                <textarea rows="5" cols="20" name="comments">Enter Comments Here</textarea><br/>
+            </fieldset>
+
+            <input type="submit" value="Submit Review">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            IS371 Sample Form
+        </title>
+    </head>
+    <body style="margin: 0;">
+        <form>
+            <fieldset>
+                <legend>Group #1</legend>
+                <input type="text" size="10" maxlength="40" name="name"><br/>
+                <input type="radio" name="shade" value="light">Light<br/>
+                <input type="radio" name="shade" value="dark">Dark<br/>
+                <input type="checkbox" name="toon“  value="Goofy">Goofy<br/>
+                <select name="degree">
+                    <option>Choose One</option>
+                    <option>Some High School</option>
+                    <option>High School Degree</option>
+                    <option>Some College</option>
+                    <option>Bachelor's Degree</option>
+                    <option>Doctorate</option>
+                </select><br/>
+            </fieldset>
+
+            <fieldset>
+                <legend>Group #2</legend>
+                <select multiple="multiple" name="music" size="4">
+                    <option value="metal/rock" >Metal/Rock</option>
+                    <option value="hiphop" >Hip Hop</option>
+                    <option value="classical" >Classical</option>
+                    <option value="alternative" >Alternative</option>
+                </select><br/>
+                <textarea rows="5" cols="20" name="comments">Enter Comments Here</textarea><br/>
+                <input type="password" size="10" maxlength="20" name="passwd"><br/>
+                <input type="file" name="songTitle"><br/>
+            </fieldset>
+            
+            <input type="submit" value="SEND">
+        </form>
+    </body>
+</html>
