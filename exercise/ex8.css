@@ -1,0 +1,35 @@
+div {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.boxPadding {
+    padding: 5px;
+    border-top: 20px solid lightgrey;
+    border-bottom: 20px solid lightgrey;
+    border-left: 10px solid lightgrey;
+    border-right: 10px solid lightgrey;
+    background: grey;
+    color: white;
+}
+
+.box1 {
+    width: 200px;
+    height: 100px;
+}
+
+.box2 {
+    width: 300px;
+    height: 150px;
+    margin-left: 200px;
+}
+
+.box3 {
+    width: 400px;
+    height: 200px;
+    margin-left: 500px;
+}
