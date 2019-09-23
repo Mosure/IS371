@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 3</title>
+        <script type="text/javascript">
+            function displayMyMessage1(){
+                document.simpleForm.response.value = 'You have clicked button A.';
+            }
+
+            function displayMyMessage2(){
+                document.simpleForm.response.value = 'You have clicked button B.';
+            }
+
+            function reset() {
+                document.simpleForm.response.value = '';
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            <input type="button" name="button1" value="Button A" onclick="displayMyMessage1()"/>
+            <br/>
+            <input type="button" name="button2" value="Button B" onclick="displayMyMessage2()"/>
+            <br/>
+            <input type="button" name="button3" value="Reset" onclick="reset()"/>
+            <br/>
+            <br/>
+            <textarea name="response" rows=2 cols=27></textarea>
+        </form>
+    </body>
+</html>
