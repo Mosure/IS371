@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 4</title>
+        <script type="text/javascript">
+            var redCount = 0;
+            var blueCount = 0;
+
+            function red(){
+                redCount++;
+            }
+
+            function blue(){
+                blueCount++;
+            }
+
+            function doShow() {
+                document.simpleForm.response.value = `Total Count: ${redCount + blueCount} RED: ${redCount} BLUE: ${blueCount}`;
+            }
+
+            function doReset() {
+                redCount = 0;
+                blueCount = 0;
+
+                document.simpleForm.response.value = '';
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            <input type="button" name="button1" value="RED" onclick="red()"/>
+            <br/>
+            <input type="button" name="button2" value="BLUE" onclick="blue()"/>
+            <br/>
+            <input type="button" name="button3" value="TOTAL" onclick="doShow()"/>
+            <br/>
+            <input type="button" name="button4" value="RESET" onclick="doReset()"/>
+            <br/>
+            <br/>
+            <textarea name="response" rows=2 cols=40></textarea>
+        </form>
+    </body>
+</html>

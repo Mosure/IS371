@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 5</title>
+        <script type="text/javascript">
+            function doAdd(){
+                document.simpleForm.result.value = Number(document.simpleForm.x1.value) + Number(document.simpleForm.x2.value);
+            }
+
+            function doMultiply(){
+                document.simpleForm.result.value = document.simpleForm.x1.value * document.simpleForm.x2.value;
+            }
+
+            function doReset() {
+                document.simpleForm.x1.value = 0;
+                document.simpleForm.x2.value = 0;
+                document.simpleForm.result.value = '';
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            Enter a number in each field:
+            <input type="number" name="x1" value=0>
+            <input type="number" name="x2" value=0>
+            <br/>
+            <input type="button" name="button1" value="+" onclick="doAdd()"/>
+            <input type="button" name="button1" value="*" onclick="doMultiply()"/>
+            <br/>
+            <input type="button" name="button1" value="RESET" onclick="doReset()"/>
+            <br/>
+            <input type="number" name="result">
+        </form>
+    </body>
+</html>
