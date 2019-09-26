@@ -5,6 +5,12 @@ files:
     destination: /var/www/html/
   - source: /exercise
     destination: /var/www/html/exercise
+  - source: /hw1
+    destination: /var/www/html/hw1
+  - source: /hw2
+    destination: /var/www/html/hw2
+  - source: /hw3
+    destination: /var/www/html/hw3
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
