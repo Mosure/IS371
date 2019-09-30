@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 7</title>
+        <script type="text/javascript">
+            function getLoan() {
+                let L = Number(document.simpleForm.loanAmt.value);
+                let R = Number(document.simpleForm.ir.value) / 100 / 12;
+                let N = Number(document.simpleForm.years.value) * 12;
+
+                let monthlyPayment = (L * R) / (1 - (1 / Math.pow(1 + R, N)));
+
+                return monthlyPayment;
+            }
+
+            function computeLoan(){
+                if (document.simpleForm.loanAmt.value === '') {
+                    alert('You  need to have a value for loan amount.');
+                } else if (document.simpleForm.ir.value === '') {
+                    alert('You  need to have a value for interest rate.');
+                } else if (document.simpleForm.years.value === '') {
+                    alert('You  need to have a value for number of years.');
+                } else {
+                    document.simpleForm.result.value = getLoan();
+                }
+            }
+
+            function doReset() {
+                document.simpleForm.loanAmt.value = '';
+                document.simpleForm.ir.value = '';
+                document.simpleForm.years.value = '';
+                document.simpleForm.result.value = '';
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            Loan Amount:
+            <input type="number" name="loanAmt">
+            <br/>
+            Interest Rate:
+            <input type="number" name="ir">
+            <br/>
+            Number of Years:
+            <input type="number" name="years">
+            <br/>
+            <input type="button" name="button1" value="Compute" onclick="computeLoan()"/>
+            <br/>
+            <input type="button" name="button1" value="RESET" onclick="doReset()"/>
+            <br/>
+            Monthly Payment
+            <input type="number" name="result">
+        </form>
+    </body>
+</html>
