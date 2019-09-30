@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 6</title>
+        <link rel="stylesheet" type="text/css" href="jex6.css"/>
+        <script type="text/javascript">
+            function doAdd(){
+                if (document.simpleForm.x1.value === '') {
+                    alert('You  need to have a value in the first box');
+                } else if (document.simpleForm.x2.value === '') {
+                    alert('You  need to have a value in the second box');
+                } else {
+                    document.simpleForm.result.value = Number(document.simpleForm.x1.value) + Number(document.simpleForm.x2.value);
+                }
+            }
+
+            function doMultiply(){
+                if (document.simpleForm.x1.value === '') {
+                    alert('You  need to have a value in the first box');
+                } else if (document.simpleForm.x2.value === '') {
+                    alert('You  need to have a value in the second box');
+                } else {
+                    document.simpleForm.result.value = Number(document.simpleForm.x1.value) * Number(document.simpleForm.x2.value);
+                }
+            }
+
+            function doReset() {
+                document.simpleForm.x1.value = '';
+                document.simpleForm.x2.value = '';
+                document.simpleForm.result.value = '';
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            Enter a number in each field:
+            <input type="number" name="x1">
+            <input type="number" name="x2">
+            <br/>
+            <input class="myButton3" type="button" name="button1" value="+" onclick="doAdd()"/>
+            <input class="myButton3" type="button" name="button1" value="*" onclick="doMultiply()"/>
+            <br/>
+            <input class="myButton3" type="button" name="button1" value="RESET" onclick="doReset()"/>
+            <br/>
+            <input type="number" name="result">
+        </form>
+    </body>
+</html>
