@@ -25,7 +25,17 @@
           alert('You  need to have a value for number of years.');
       } else {
           document.simpleForm.displayResult.value = '$ ' + getLoan();
+
+          document.simpleForm.displayResult2.value = '$ ' + Math.round(getLoan() * Number(document.simpleForm.years.value) * 12 * 100) / 100;
       }
+  }
+
+  function doReset() {
+      document.simpleForm.loanAmt.value = '';
+      document.simpleForm.ir.value = '';
+      document.simpleForm.years.value = '';
+      document.simpleForm.displayResult.value = '';
+      document.simpleForm.displayResult2.value = '';
   }
   
   </script>
@@ -57,9 +67,14 @@
 	  
 	  
 	  <input type="button" name="btnCalc" value="Calculate" onclick="computeLoan()">
-	  <label for="displayResult"> RESULT </label>
+	  <label for="displayResult"> Monthly Payment </label>
       <input type='text' name="displayResult" id="displayResult">
       
+    <label for="displayResult2"> Total Payment </label>
+      <input type='text' name="displayResult2" id="displayResult2">
+    
+    <input type="button" name="button1" value="RESET" onclick="doReset()"/>
+
 	</form>  
     </div>
 	
