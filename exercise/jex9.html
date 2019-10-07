@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 9</title>
+        <style>
+            input.myButton {
+                background-color: navy;
+                color: gold;
+                font-size: 0.5in;
+                font-family: "Courier New", "Courier";
+                font-weight: bold;
+                width: 2in;
+                height: 0.5in;
+            }
+        </style>
+        <script type="text/javascript">
+            var lastValue = false;
+
+            function btnTrigger(cell) {
+                if (cell.value !== "-") {
+                    alert("Please try again.");
+                } else {
+                    // const type = Math.round(Math.random());
+
+                    cell.value = lastValue ? "POP" : "TART";
+                    lastValue = !lastValue;
+                }
+            }
+
+            function doReset() {
+                for (let i = 1; i <= 5; i++) {
+                    document.simpleForm["btn" + i].value = "-";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            <input type="button" class="myButton" name="btn1" value="-" onclick="btnTrigger(this)"/>
+            <input type="button" class="myButton" name="btn2" value="-" onclick="btnTrigger(this)"/>
+            <input type="button" class="myButton" name="btn3" value="-" onclick="btnTrigger(this)"/>
+            <input type="button" class="myButton" name="btn4" value="-" onclick="btnTrigger(this)"/>
+            <input type="button" class="myButton" name="btn5" value="-" onclick="btnTrigger(this)"/>
+            <br/>
+            <br/>
+            <input type="button" class="myButton" name="reset" value="RESET" onclick="doReset()"/>
+        </form>
+    </body>
+</html>

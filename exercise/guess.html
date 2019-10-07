@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise Guess</title>
+        <script type="text/javascript">
+            var randomNumber = 0;
+
+            function fnGenerate() {
+                randomNumber = Math.round(Math.random() * 100);
+            }
+
+            function fnGuess() {
+                if (randomNumber < Number(document.simpleForm.txtBox1.value)) {
+                    alert("Too High!");
+                } else if (randomNumber > Number(document.simpleForm.txtBox1.value)) {
+                    alert("Too Low!");
+                } else {
+                    alert("Correct.");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            <input type="text" name="txtBox1" value="" size=3/>
+            <input type="button" name="btn1" value="Generate" onclick="fnGenerate()"/>
+            <input type="button" name="btn2" value="Guess" onclick="fnGuess()"/>
+        </form>
+    </body>
+</html>
