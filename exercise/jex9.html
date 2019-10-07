@@ -17,7 +17,7 @@
 
             function btnTrigger(cell) {
                 if (cell.value !== "-") {
-                    alert("Please try again.");
+                    alert("Cannot " + (lastValue ? "POP" : "TART") + " a " + (!lastValue ? "POP." : "TART."));
                 } else {
                     // const type = Math.round(Math.random());
 
