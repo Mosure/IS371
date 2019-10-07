@@ -19,8 +19,6 @@
                 if (cell.value !== "-") {
                     alert("Cannot " + (lastValue ? "POP" : "TART") + " a " + (!lastValue ? "POP." : "TART."));
                 } else {
-                    // const type = Math.round(Math.random());
-
                     cell.value = lastValue ? "POP" : "TART";
                     lastValue = !lastValue;
                 }
