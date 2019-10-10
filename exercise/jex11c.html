@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 11c</title>
+        <script type="text/javascript">
+            var pictures = [
+                'pic/create.gif',
+                'pic/impact.gif',
+                'pic/connect.gif',
+                'pic/succeed.gif'
+            ];
+
+            function loadRandomImage() {
+                document.images[0].src = pictures[Math.floor(Math.random() * 4)];
+            }
+
+            function changeCreate() {
+                document.images[0].src = pictures[0];
+            }
+
+            function changeImpact() {
+                document.images[0].src = pictures[1];
+            }
+
+            function changeConnect() {
+                document.images[0].src = pictures[2];
+            }
+
+            function changeSucceed() {
+                document.images[0].src = pictures[3];
+            }
+        </script>
+    </head>
+    <body onload="loadRandomImage()">
+        <img style="display: block;" src="pic/create.gif"/>
+        <br/>
+        <form name=simpleForm>
+            <input type="button" value="CREATE" onclick="changeCreate()"/>
+            <input type="button" value="IMPACT" onclick="changeImpact()"/>
+            <input type="button" value="CONNECT" onclick="changeConnect()"/>
+            <input type="button" value="SUCCEED" onclick="changeSucceed()"/>
+        </form>
+    </body>
+</html>
