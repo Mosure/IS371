@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 11a</title>
+        <script type="text/javascript">
+            function changeCreate() {
+                document.images[0].src = 'pic/create.gif';
+            }
+
+            function changeImpact() {
+                document.images[0].src = 'pic/impact.gif';
+            }
+
+            function changeConnect() {
+                document.images[0].src = 'pic/connect.gif';
+            }
+
+            function changeSucceed() {
+                document.images[0].src = 'pic/succeed.gif';
+            }
+        </script>
+    </head>
+    <body>
+        <img style="display: block;" src="pic/create.gif"/>
+        <br/>
+        <form name=simpleForm>
+            <input type="button" value="CREATE" onclick="changeCreate()"/>
+            <input type="button" value="IMPACT" onclick="changeImpact()"/>
+            <input type="button" value="CONNECT" onclick="changeConnect()"/>
+            <input type="button" value="SUCCEED" onclick="changeSucceed()"/>
+        </form>
+    </body>
+</html>

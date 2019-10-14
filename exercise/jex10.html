@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 10</title>
+        <script type="text/javascript">
+            function doGenerate() {
+                for (let i = 0; i < 10; i++) {
+                    document.simpleForm.elements[i].value = Math.ceil(Math.random() * 50);
+                }
+            }
+
+            function doReset() {
+                for (let i = 0; i < 10; i++) {
+                    document.simpleForm.elements[i].value = "-";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            <input type="text" name="btn1" value="-"/>
+            <input type="text" name="btn2" value="-"/>
+            <input type="text" name="btn3" value="-"/>
+            <input type="text" name="btn4" value="-"/>
+            <input type="text" name="btn5" value="-"/>
+            <input type="text" name="btn6" value="-"/>
+            <input type="text" name="btn7" value="-"/>
+            <input type="text" name="btn8" value="-"/>
+            <input type="text" name="btn9" value="-"/>
+            <input type="text" name="btn10" value="-"/>
+            <br/>
+            <br/>
+            <input type="button" name="reset" value="Generate List" onclick="doGenerate()"/>
+            <input type="button" name="reset" value="RESET" onclick="doReset()"/>
+        </form>
+    </body>
+</html>
