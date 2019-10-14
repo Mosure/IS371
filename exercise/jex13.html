@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 13</title>
+        <script type="text/javascript">
+            var stopHandler = undefined;
+
+            var pictures = [
+                'pic/create.gif',
+                'pic/impact.gif',
+                'pic/connect.gif',
+                'pic/succeed.gif'
+            ];
+
+            function loadRandomImage() {
+                document.images[0].src = pictures[Math.floor(Math.random() * pictures.length)];
+            }
+
+            function changeRandom() {
+                document.images[0].src = pictures[Math.floor(Math.random() * pictures.length)];
+            }
+
+            function rotateRandom() {
+                stopHandler = setInterval(changeRandom, 1000);
+            }
+
+            function rotateStop() {
+                clearInterval(stopHandler);
+            }
+        </script>
+    </head>
+    <body onload="loadRandomImage()">
+        <img style="display: block;" src="pic/create.gif"/>
+        <br/>
+        <form name=simpleForm>
+            <input type="button" value="CHANGE RANDOM" onclick="changeRandom()"/>
+            <input type="button" value="ROTATE RANDOM" onclick="rotateRandom()"/>
+            <input type="button" value="ROTATE STOP" onclick="rotateStop()"/>
+        </form>
+    </body>
+</html>

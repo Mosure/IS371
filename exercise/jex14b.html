@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 14b</title>
+        <script type="text/javascript">
+            var stopHandler = undefined;
+
+            var pictures = [
+                'pic/jack1.jpg',
+                'pic/jack2.jpg',
+                'pic/jack3.jpg',
+                'pic/jack4.jpg',
+                'pic/jack5.jpg',
+                'pic/jack6.jpg',
+                'pic/jack7.jpg',
+            ];
+
+            function loadRandomImage() {
+                for (let i = 0; i < 3; i++) {
+                    document.images[i].src = pictures[Math.floor(Math.random() * pictures.length)];
+                }
+            }
+
+            function rotateRandom() {
+                stopHandler = setInterval(loadRandomImage, 100);
+            }
+
+            function rotateStop() {
+                clearInterval(stopHandler);
+
+                let allEqual = true;
+
+                for (let i = 1; i < 3; i++) {
+                    if (document.images[i].src !== document.images[i - 1].src) {
+                        allEqual = false;
+                        break;
+                    }
+                }
+
+                if (allEqual) {
+                    alert("JACKPOT");
+                }
+            }
+        </script>
+    </head>
+    <body onload="loadRandomImage()">
+        <img src="pic/create.gif"/>
+        <img src="pic/create.gif"/>
+        <img src="pic/create.gif"/>
+        <br/>
+        <form name=simpleForm>
+            <input type="button" value="ROTATE RANDOM" onclick="rotateRandom()"/>
+            <input type="button" value="ROTATE STOP" onclick="rotateStop()"/>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 12</title>
+        <script type="text/javascript">
+            var articles = ["A", "THE"];
+            var nouns = ["BOY", "GIRL", "BAT", "BALL"];
+            var verbs = ["HIT", "SAW", "LIKED"];
+            var prepo = ["WITH", "BY"];
+
+            function genSentence() {
+                return [nounPhrase(), verbPhrase()].join(" ");
+            }
+
+            function nounPhrase() {
+                return [getRandElement(articles), getRandElement(nouns)].join(" ");
+            }
+
+            function verbPhrase() {
+                return [getRandElement(verbs), nounPhrase(), prepPhrase()].join(" ");
+            }
+
+            function prepPhrase() {
+                return [getRandElement(prepo), nounPhrase()].join(" ");
+            }
+
+            function getRandElement(array) {
+                return array[Math.floor(Math.random() * array.length)];
+            }
+
+            function alertSentence() {
+                alert(genSentence());
+            }
+        </script>
+    </head>
+    <body onload="loadRandomImage()">
+        <br/>
+        <form name=simpleForm>
+            <input type="button" value="Generate" onclick="alertSentence()"/>
+        </form>
+    </body>
+</html>
