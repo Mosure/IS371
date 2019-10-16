@@ -1,0 +1,94 @@
+<HTML>
+     <HEAD>
+          <title>IS371 JS Exercise 15</title>
+          <style>
+               a.img {
+                    border: none;
+                    text-decoration: none;
+               }
+          </style>
+          <SCRIPT language="JavaScript">
+               var rolls = [
+                    "home.gif",
+                    "home_lit.gif",
+                    "lectures.gif",
+                    "lectures_lit.gif",
+                    "readings.gif",
+                    "readings_lit.gif",
+                    "syllabus.gif",
+                    "syllabus_lit.gif"
+               ];
+
+               function change(src, val) {
+                    src.src = rolls[val * 2 + 1];
+               }
+
+               function changeback(src, val) {
+                    src.src = rolls[val * 2];
+               }
+          </SCRIPT>
+     </HEAD>
+     <BODY leftmargin="7" topmargin="10" onLoad="done=1;" TEXT="#ffffff" BACKGROUND="b5.gif">
+          <P><!----></P>
+          <P>
+               <TABLE WIDTH="661" BORDER="0" CELLSPACING="2" CELLPADDING="0" HEIGHT="138">
+                    <TR>
+                         <TD WIDTH="100%" ALIGN="RIGHT" HEIGHT="65">
+                              <P ALIGN=LEFT>
+                                   &nbsp;
+                                   <IMG SRC="marqman.jpg" width=200 ALIGN="BOTTOM" BORDER="0" NATURALSIZEFLAG="3">
+                         </TD>
+                    </TR>
+                    <TR>
+                         <TD WIDTH="100%" ALIGN="CENTER" HEIGHT="65" VALIGN="BOTTOM">
+                              <P ALIGN=RIGHT>
+                                   <FONT COLOR="#000000" SIZE="+2" FACE="Verdana">&nbsp;</FONT>
+                                   <B>
+                                        <FONT COLOR="#400080" SIZE="+2" FACE="Verdana">
+                                             JavaScript Programming
+                                        </FONT>
+                                        <FONT COLOR="#000000" SIZE="+2" FACE="Verdana"></FONT>
+                                   </B>
+                                   <FONT COLOR="#000000" SIZE="+2" FACE="Verdana">
+                                        <IMG SRC="java.gif" WIDTH="79" HEIGHT="79" ALIGN="MIDDLE" BORDER="0" NATURALSIZEFLAG="3">
+                                   </FONT>
+                              </P>
+                         <P ALIGN=RIGHT>
+                              <FONT COLOR="#000000" SIZE="-1" FACE="Verdana">
+                              This course was developed so that you have some experience
+                              <BR>
+                              developing and working with web based applications at Marquette
+                              <BR>
+                         </P>
+
+                         <P ALIGN=LEFT VALIGN=BOTTOM>
+                              <A href="">
+                                   <img src="syllabus.gif" onmouseover="change(this, 3)" onmouseout="changeback(this, 3)" border=0 align=bottom>
+                              </A>
+               
+                              <BR>
+
+                              <A href="">
+                                   <img src="lectures.gif" onmouseover="change(this, 1)" onmouseout="changeback(this, 1)" border=0 align=bottom >
+                              </A>
+                              
+                              <BR>
+
+                              <A href=""">
+                                   <img src="readings.gif" onmouseover="change(this, 2)" onmouseout="changeback(this, 2)" border=0 align=bottom >
+                              </A>
+                              
+                              <BR><BR>
+               
+                              <A href=""">
+                                   <img src="home.gif" onmouseover="change(this, 0)" onmouseout="changeback(this, 0)" border=0 align=bottom >
+                              </A>
+                              
+                              <BR>
+                         </P>
+                         </TD> 
+                    </TR>
+               </TABLE>
+          <BR>
+     </BODY>
+</HTML>
