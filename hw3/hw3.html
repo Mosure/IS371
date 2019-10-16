@@ -1,0 +1,182 @@
+<html>
+    <head>
+        <title>IS371 - Homework 3</title>
+        <style type="text/css">
+            input.btn {
+                background-color: darkred;
+                color: gold;
+                font-size: 2in;
+                line-height: 2in;
+                font-family: "Courier New", "Courier";
+                font-weight: bold;
+                width: 2in;
+                height: 2in;
+            }
+        </style>
+        <script type="text/javascript">
+            var lastSymbol = true;
+
+            var firstWins = 0;
+            var lastWins = 0;
+            var ties = 0;
+
+            function handleClick(btn) {
+                if (btn.value) {
+                    alert('Sorry already taken. Try Again');
+                    return;
+                }
+
+                btn.value = currentSymbol();
+
+                if (checkWin()) {
+                    setTimeout(() => {
+                        alert('Player: ' + currentSymbol() + ', has won!');
+                        replayGame();
+                    }, 100);
+
+                    if (lastSymbol) {
+                        firstWins++;
+                    } else {
+                        lastWins++;
+                    }
+
+                    redraw();
+                    return;
+                }
+
+                if (checkFull()) {
+                    setTimeout(() => {
+                        alert('Tie!');
+                        replayGame();
+                    }, 100);
+
+                    ties++;
+                    redraw();
+                    return;
+                }
+
+                lastSymbol = !lastSymbol;
+                redraw();
+            }
+
+            function checkPos(start, next, inc = 0) {
+                const nextPos = start + next;
+
+                if (inc > 1) {
+                    return true;
+                }
+
+                return document.simpleForm['b' + start].value
+                    && document.simpleForm['b' + start].value === document.simpleForm['b' + nextPos].value
+                    && checkPos(nextPos, next, inc + 1);
+            }
+
+            function checkWin() {
+                let win = false;
+                for (let i = 1; i <= 3; i++) {
+                    win |= checkPos(1 + (i - 1) * 3, 1);
+                    win |= checkPos(i, 3);
+                }
+
+                win |= checkPos(1, 4);
+                win |= checkPos(3, 2);
+
+                return win;
+            }
+
+            function checkFull() {
+                for (let i = 1; i <= 9; i++) {
+                    if (!document.simpleForm['b' + i].value) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+            function currentSymbol() {
+                return lastSymbol ? 'X' : 'O';
+            }
+
+            function replayGame() {
+                lastSymbol = true;
+
+                for (let i = 1; i <= 9; i++) {
+                    document.simpleForm['b' + i].value = '';
+                }
+
+                redraw();
+            }
+
+            function resetScore() {
+                replayGame();
+
+                firstWins = 0;
+                lastWins = 0;
+                ties = 0;
+
+                redraw();
+            }
+
+            function redraw() {
+                document.simpleForm.cMove.value = currentSymbol();
+                document.simpleForm.scoreX.value = firstWins;
+                document.simpleForm.scoreO.value = lastWins;
+                document.simpleForm.scoreTie.value = ties;
+            }
+        </script>
+    </head>
+    <body onload="replayGame()">
+        <form name=simpleForm>
+            <table>
+                <tr>
+                    <td>
+                        <input class="btn" type="button" name="b1" onclick="handleClick(this)"/>
+                    </td>
+                    <td>
+                        <input class="btn" type="button" name="b2" onclick="handleClick(this)"/>
+                    </td>
+                    <td>
+                        <input class="btn" type="button" name="b3" onclick="handleClick(this)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="btn" type="button" name="b4" onclick="handleClick(this)"/>
+                    </td>
+                    <td>
+                        <input class="btn" type="button" name="b5" onclick="handleClick(this)"/>
+                    </td>
+                    <td>
+                        <input class="btn" type="button" name="b6" onclick="handleClick(this)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="btn" type="button" name="b7" onclick="handleClick(this)"/>
+                    </td>
+                    <td>
+                        <input class="btn" type="button" name="b8" onclick="handleClick(this)"/>
+                    </td>
+                    <td>
+                        <input class="btn" type="button" name="b9" onclick="handleClick(this)"/>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            CURRENT MOVE:
+            <input type="text" name="cMove"/>
+            <br/>
+            <input type="button" name="replayBtn" value="REPLAY GAME" onclick="replayGame()"/>
+            <br/>
+            SCORE: X
+            <input type="text" name="scoreX"/>
+            O
+            <input type="text" name="scoreO"/>
+            TIE
+            <input type="text" name="scoreTie"/>
+            <br/>
+            <input type="button" name="replayBtn" value="RESET SCORE AND GAME" onclick="resetScore()"/>
+        </form>
+    </body>
+</html>
