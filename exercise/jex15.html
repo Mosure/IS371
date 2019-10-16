@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 15</title>
+        <style type="text/css">
+            .box {
+                background-color: darkred;
+                color: gold;
+                font-size: 0.5in;
+                line-height: 0.75in;
+                font-family: "Courier New", "Courier";
+                font-weight: bold;
+                width: 2.5in;
+                height: 0.75in;
+            }
+        </style>
+        <script type="text/javascript">
+            var stopHandler = undefined;
+
+            function updateTime() {
+                document.simpleForm.time.value = getRepresentation();
+            }
+
+            function startTime() {
+                updateTime();
+                stopHandler = setInterval(updateTime, 1000, 0);
+            }
+
+            function stopTime() {
+                clearInterval(stopHandler);
+            }
+
+            function getRepresentation() {
+                return new Date().toString().slice(16, 24);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>The Time is:</h2>
+        <form name=simpleForm>
+            <input type="text" class="box" name="time"/>
+            <br/>
+            <input type="button" value="UPDATE TIME" onclick="updateTime()"/>
+            <input type="button" value="START TIME" onclick="startTime()"/>
+            <input type="button" value="STOP TIME" onclick="stopTime()"/>
+        </form>
+    </body>
+</html>
