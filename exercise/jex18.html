@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>IS371 JS Exercise 18</title>
+        <style type="text/css">
+            .box {
+                background-color: darkred;
+                color: gold;
+                font-size: 0.5in;
+                line-height: 0.75in;
+                font-family: "Courier New", "Courier";
+                font-weight: bold;
+                width: 2.5in;
+                height: 0.75in;
+            }
+        </style>
+        <script type="text/javascript">
+            Car.counter = 0;
+            var myCar1, myCar2, myCar3;
+
+            function Car(newMake, newModel, newYear) {
+                var make = newMake;
+                var year = newYear;
+
+                this.model = newModel;
+
+                this.getMake = function() {
+                    return make;
+                };
+
+                this.getModel = function() {
+                    return this.model;
+                };
+
+                this.getYear = function() {
+                    return year;
+                };
+
+                this.changeModel = function(newModel) {
+                    this.model = newModel;
+                };
+
+                this.changeMake = function(newMake) {
+                    make = newMake;
+                };
+
+                this.changeYear = function(newYear) {
+                    year = newYear;
+                };
+
+                this.changeCar = function(newMake, newModel, newYear) {
+                    this.changeMake(newMake);
+                    this.changeModel(newModel);
+                    this.changeYear(newYear);
+                };
+
+                var shoutHooray = function() {
+                    alert('Hooray!');
+                };
+
+                Car.counter++;
+                alert('Create Car No:' + Car.counter);
+            }
+
+            function createAllCar() {
+                myCar1 = new Car('Toyota', 'Camry', 2002);
+                myCar2 = new Car('Honda', 'Accord', 2004);
+                myCar3 = new Car('Mazda', 'Protoge', 2000);
+            }
+
+            function displayAllCar() {
+                alert(myCar1.getMake() + ' ' + myCar1.getModel() + ' ' + myCar1.getYear());
+
+                alert('make: ' + myCar1.make);
+                alert('model: ' + myCar1.model);
+                alert('year: ' + myCar1.year);
+                // Can't display make/year using variables due to them being private
+
+                myCar2.changeModel('Civic');
+
+                alert(myCar2.getMake() + ' ' + myCar2.getModel() + ' ' + myCar2.getYear());
+
+                myCar3.changeCar('Isuzu', 'Suzuki', 2001);
+
+                alert(myCar3.getMake() + ' ' + myCar3.getModel() + ' ' + myCar3.getYear());
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="button" value="Create Car" onclick="createAllCar()"/>
+        <input type="button" value="Tell me more" onclick="displayAllCar()"/>
+    </body>
+</html>
