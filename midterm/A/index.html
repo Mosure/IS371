@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>IS371 - Midterm Question A</title>
+        <style type="text/css">
+            input.btn {
+                background-color: darkred;
+                color: gold;
+                font-family: "Courier New", "Courier";
+                font-weight: bold;
+                font-size: 0.75in;
+                line-height: 1in;
+                text-align: center;
+                width: 2.5in;
+                height: 1in;
+            }
+
+            .rightAlign {
+                text-align: right !important;
+            }
+        </style>
+        <script type="text/javascript">
+            var add = false;
+            var memory = 0;
+            var slot = '0';
+
+            function updateNumber(cell) {
+                if (add) {
+                    slot = '0';
+                    add = false;
+                }
+
+                slot = (slot === '0' ? '' : slot) + cell.value;
+                redraw();
+            }
+
+            function clearMemory() {
+                slot = '0';
+                add = false;
+                memory = 0;
+                redraw();
+            }
+
+            function startAdding() {
+                add = true;
+                memory = Number(slot);
+            }
+
+            function computeSum() {
+                slot = memory + Number(slot);
+                redraw();
+            }
+
+            function redraw() {
+                document.simpleForm.showWin.value = slot;
+            }
+        </script>
+    </head>
+    <body>
+        <form name=simpleForm>
+            <input class="btn rightAlign" type="text" name="showWin" value="0"/>
+            <br/>
+            <input class="btn" type="button" value="1" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="2" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="3" onclick="updateNumber(this)"/>
+            <br/>
+            <input class="btn" type="button" value="4" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="5" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="6" onclick="updateNumber(this)"/>
+            <br/>
+            <input class="btn" type="button" value="7" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="8" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="9" onclick="updateNumber(this)"/>
+            <br/>
+            <input class="btn" type="button" value="+" onclick="startAdding()"/>
+            <input class="btn" type="button" value="0" onclick="updateNumber(this)"/>
+            <input class="btn" type="button" value="=" onclick="computeSum()"/>
+            <input class="btn" type="button" value="CLEAR" onclick="clearMemory()"/>
+        </form>
+    </body>
+</html>
