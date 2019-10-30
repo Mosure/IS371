@@ -1,39 +1,38 @@
 <html>
     <head>
         <title>IS371 - Midterm Question B</title>
-        <style type="text/css">
-            input.btn {
-                background-color: darkred;
-                color: gold;
-                font-family: "Courier New", "Courier";
-                font-weight: bold;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
         <script type="text/javascript">
-            var cell;
-
-            function updateNumber() {
-
+            function ftoc() {
+                document.simpleForm.tc.value = round((Number(document.simpleForm.tf.value) - 32) * 5/9);
             }
 
-            function clearMemory() {
-
+            function ctof() {
+                document.simpleForm.tf.value = round(9/5 * Number(document.simpleForm.tc.value) + 32);
             }
 
-            function startAdding() {
-
+            function resetForm() {
+                document.simpleForm.tf.value = '0';
+                document.simpleForm.tc.value = '0';
             }
 
-            function computeSum() {
-
+            function round(val) {
+                return Math.round(val * 1000) / 1000;
             }
         </script>
     </head>
     <body>
+        <h1>Temperature Conversion</h1>
         <form name=simpleForm>
-            
+            <input type="text" value="0" name="tf"/> Fahrenheit
+            <br/>
+            <input type="button" value="Convert Fahrenheit to Celsius" onclick="ftoc()"/>
+            <br/>
+            <input type="button" value="Convert Celsius to Fahrenheit" onclick="ctof()"/>
+            <br/>
+            <input type="text" value="0" name="tc"/> Celsius
+            <br/>
+            <br/>
+            <input type="button" value="Reset Form" onclick="resetForm()"/>
         </form>
     </body>
 </html>
