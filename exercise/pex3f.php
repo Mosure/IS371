@@ -9,7 +9,7 @@
             echo "<tr>";
 
             for ($j = 0; $j < $columns; $j++) {
-                echo "<td/>";
+                echo "<td>($i, $j)</td>";
             }
 
             echo "</tr>";
