@@ -1,6 +1,6 @@
 <?php
-    $rows = trim($_POST['txtRows']);
-    $columns = trim($_POST['txtColumns']);
+    $rows = $_POST['txtRows'];
+    $columns = $_POST['txtColumns'];
 
     if (is_int($rows) && is_int($columns)) {
         echo "<table border=1>";
