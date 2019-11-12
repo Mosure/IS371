@@ -4,7 +4,7 @@
 
     if (strlen($f_name) > 0 && strlen($l_name) > 0) {
         echo "Hello, ".$f_name." ".$l_name."!";
+    } else {
+        echo "Invalid input.";
     }
-
-    echo "Invalid input.";
 ?>
