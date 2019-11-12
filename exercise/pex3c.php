@@ -3,7 +3,7 @@
     <body>
         <form action= "pex3d.php" method="post">
             Enter the number of times to say hello:
-            <input type="nummber" name="txtNum" size="30">
+            <input type="number" name="txtNum" size="30">
 
             <br/>
             
