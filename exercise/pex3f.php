@@ -2,7 +2,7 @@
     $rows = $_POST['txtRows'];
     $columns = $_POST['txtColumns'];
 
-    if (is_int($rows) && is_int($columns)) {
+    if (is_numeric($rows) && is_numeric($columns)) {
         echo "<table border=1>";
 
         for ($i = 0; $i < $rows; $i++) {
