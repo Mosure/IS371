@@ -5,6 +5,7 @@
     <body>
         <h1>This is the list of users in the table</h1><br/>
         <?php
+            // Pull from conf
             $myUserName = getenv("DB_USER");
             $myPassword = getenv("DB_PASSWORD");
             $myLocalHost = getenv("DB_HOST");
