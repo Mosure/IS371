@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Accessing the Users table for Alumni</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
     <body>
         <h1>This is the list of users in the table</h1><br/>
@@ -12,6 +13,8 @@
             $myDB = getenv("DB_NAME");
 
             $conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
+
+            $mysqli->set_charset("utf8");
 
             if (!$conn) {
                 die("Connection failed: $myUserName @ $myLocalHost DB = $myDB ERR = ".mysqli_connect_error()." ERRNUM = ".mysqli_connect_errno());
