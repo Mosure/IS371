@@ -14,8 +14,6 @@
 
             $conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
 
-            $mysqli->set_charset("utf8");
-
             if (!$conn) {
                 die("Connection failed: $myUserName @ $myLocalHost DB = $myDB ERR = ".mysqli_connect_error()." ERRNUM = ".mysqli_connect_errno());
             }
