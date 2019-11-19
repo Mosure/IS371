@@ -13,7 +13,7 @@
             $conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
 
             if (!$conn) {
-                die("Connection failed: ");
+                die("Connection failed:".$myLocalHost);
             }
 
             $query = "SELECT * FROM users";
