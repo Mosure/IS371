@@ -14,7 +14,7 @@
             $conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
 
             if (!$conn) {
-                die("Connection failed:".$myLocalHost);
+                die("Connection failed: $myUserName@$myLocalHost DB=$myDB");
             }
 
             $query = "SELECT * FROM users";
@@ -38,7 +38,7 @@
                 echo "<td>Cell</td>";
                 echo "<td>Email</td>";
 
-                echo "</tr>";
+                echo "</tr>";ge
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";
