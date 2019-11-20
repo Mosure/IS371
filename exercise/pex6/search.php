@@ -56,10 +56,10 @@
 
                     echo "<tr>";
 
-                    echo "<td>Last Name</td>";
+                    echo "<td>ID</td>";
                     echo "<td>Prefix</td>";
                     echo "<td>First Name</td>";
-                    echo "<td>MI</td>";
+                    echo "<td>Last Name</td>";
                     echo "<td>Target</td>";
                     echo "<td>Active</td>";
                     echo "<td></td>";
@@ -75,10 +75,10 @@
                             echo "<tr bgcolor='#bbb'>";
                         }
 
-                        echo "<td>".$row["last_name"]."</td>";
+                        echo "<td>".$row["alum_id"]."</td>";
                         echo "<td>".$row["prefix"]."</td>";
                         echo "<td>".$row["first_name"]."</td>";
-                        echo "<td>".$row["middle_name"]."</td>";
+                        echo "<td>".$row["last_name"]."</td>";
                         echo "<td>".$row["target"]."</td>";
                         echo "<td>".$row["active"]."</td>";
 
