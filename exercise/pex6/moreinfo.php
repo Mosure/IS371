@@ -20,7 +20,7 @@
             }
 
             $query = "SELECT * FROM alumni WHERE alum_id='$id'";
-            $majors_query = "SELECT title FROM alumni, alum_major, major WHERE alumni.alum_id='$id' AND alum_major.alum_id = alumni.id AND alum_major.major_id = major.major_id";
+            $majors_query = "SELECT major.title FROM alumni, alum_major, major WHERE alumni.alum_id='$id' AND alum_major.alum_id = alumni.alum_id AND alum_major.major_id = major.major_id";
 
             $result = mysqli_query($conn, $query);
             $majors_result = mysqli_query($conn, $majors_query);
