@@ -35,11 +35,11 @@
                     $search_l_name = trim($_POST['last']);
 
                     if ($search_f_name !== '') {
-                        $query = $query."AND first_name = '$search_f_name'";
+                        $query = $query." AND first_name = '$search_f_name'";
                     }
 
                     if ($search_f_name !== '') {
-                        $query = $query."AND last_name = '$search_l_name'";
+                        $query = $query." AND last_name = '$search_l_name'";
                     }
                 }
 
