@@ -20,10 +20,17 @@
             }
 
             $query = "SELECT * FROM alumni WHERE alum_id='$id'";
+            $majors_query = "SELECT title FROM alumni, alum_major, major WHERE alumni.alum_id='$id' AND alum_major.alum_id = alumni.id AND alum_major.major_id = major.major_id";
+
             $result = mysqli_query($conn, $query);
+            $majors_result = mysqli_query($conn, $majors_query);
 
             if (!$result) {
                 die("cannot processed select query");
+            }
+
+            if (!$majors_result) {
+                die("Cannot process majors query.");
             }
 
             $num = mysqli_num_rows($result);
@@ -58,6 +65,13 @@
 
                     echo "<div>Majors:</div>";
 
+                    $major_num = mysqli_num_rows($majors_result);
+
+                    while ($major_row = mysqli_fetch_assoc($result)) {
+                        $title = $major_row["title"];
+
+                        echo "<div>$title</div>";
+                    }
                 }
             }
             else {
