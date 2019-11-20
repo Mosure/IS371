@@ -71,10 +71,10 @@
                         while ($major_row = mysqli_fetch_assoc($majors_result)) {
                             $title = $major_row["title"];
 
-                            echo "<div style='margin-left: 5em;'>$title</div>";
+                            echo "<div style='margin-left: 3em;'>$title</div>";
                         }
                     } else {
-                        echo "<div>None</div>";
+                        echo "<div style='margin-left: 3em;'>None</div>";
                     }
                 }
             }
