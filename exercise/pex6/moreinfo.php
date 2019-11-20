@@ -67,10 +67,14 @@
 
                     $major_num = mysqli_num_rows($majors_result);
 
-                    while ($major_row = mysqli_fetch_assoc($result)) {
-                        $title = $major_row["title"];
+                    if ($major_num > 0) {
+                        while ($major_row = mysqli_fetch_assoc($majors_result)) {
+                            $title = $major_row["title"];
 
-                        echo "<div>$title</div>";
+                            echo "<div>$title</div>";
+                        }
+                    } else {
+                        echo "<div>None</div>";
                     }
                 }
             }
