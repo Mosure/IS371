@@ -47,16 +47,16 @@
                     $comments = $row["comments"];
 
                     echo "<div style='font-weight: bold;'>$prefix $first_name $last_name</div>";
-                    echo "<div style='font-weight: bold;'>Address: $home_address</div>";
-                    echo "<div style='font-weight: bold;'>$home_city, $home_state $home_zip</div>";
-                    echo "<div style='font-weight: bold;'>Home Phone: $home_phone</div>";
-                    echo "<div style='font-weight: bold;'>Cell Phone: $cell_phone</div>";
-                    echo "<div style='font-weight: bold;'>Email: $email</div>";
-                    echo "<div style='font-weight: bold;'>Comments: $comments</div>";
-                    echo "<div style='font-weight: bold;'>Target Sponsor: $target</div>";
-                    echo "<div style='font-weight: bold;'>Active: $active</div>";
+                    echo "<div>Address: $home_address</div>";
+                    echo "<div>$home_city, $home_state $home_zip</div>";
+                    echo "<div>Home Phone: $home_phone</div>";
+                    echo "<div>Cell Phone: $cell_phone</div>";
+                    echo "<div>Email: $email</div>";
+                    echo "<div>Comments: $comments</div>";
+                    echo "<div>Target Sponsor: $target</div>";
+                    echo "<div>Active: $active</div>";
 
-                    echo "<div style='font-weight: bold;'>Majors:</div>";
+                    echo "<div>Majors:</div>";
 
                 }
             }

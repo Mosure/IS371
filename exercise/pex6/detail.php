@@ -4,7 +4,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
     <body>
-        <h1>This is the list of alumni in the table</h1><br/>
         <?php
             // Pull from conf
             $myUserName = getenv("DB_USER");
