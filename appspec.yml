@@ -11,6 +11,8 @@ files:
     destination: /var/www/html/hw2
   - source: /hw3
     destination: /var/www/html/hw3
+  - source: /php
+    destination: /var/www/html/php
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
