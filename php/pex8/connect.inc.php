@@ -1,5 +1,15 @@
 <?php
-    
+    $myUserName = getenv("DB_USER");
+    $myPassword = getenv("DB_PASSWORD");
+    $myLocalHost = getenv("DB_HOST");
+    $myDB = getenv("DB_NAME");
+
+    $conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
+
+    if (!$conn) {
+        die("Connection failed!");
+    }
+
     if ($_POST['submit1']) {
         $sql_update = "UPDATE alumni SET home_address='$street', home_city='$city', home_state='$state', home_zip='$zip', email='$email' WHERE alum_id='$id'";
 

@@ -13,18 +13,33 @@
         </form>
 
         <?php
-            if ($num == 1) {
-                $_SESSION['loginID'] = $_POST['loginID'];
-                $_SESSION['logABC'] = 'APPLE';
+            include('connect.inc.php');
 
-                $_SESSION['lastName'] = $row['lastName'];
+            if ($_POST['login']) {
+                $username = $_POST['user'];
+                $password = $_POST['password'];
 
-                echo '<meta http-equiv="refresh" content="0; url=detail.php">';
-            } else {
-                echo 'Invalid username/password!';
+                $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+                $result = mysqli_query($conn, $query);
+
+                if (!$result) {
+                    die("cannot processed login query");
+                }
+    
+                $num = mysqli_num_rows($result);
+
+                if ($num == 1) {
+                    $row = mysqli_fetch_assoc($result);
+
+                    $_SESSION['logABC'] = 'APPLE';
+    
+                    $_SESSION['lastName'] = $row['last_name'];
+    
+                    echo '<meta http-equiv="refresh" content="0; url=detail.php">';
+                } else {
+                    echo 'Invalid username/password!';
+                }
             }
-
-            mysqli_close($conn);
         ?>
     </body>
 </html>
