@@ -16,7 +16,7 @@
             $maj_id = $_POST['add_major'];
             $sql_addMaj = "INSERT INTO alum_majors VALUES ('$id', '$maj_id')";
 
-            result = mysqli_query($conn, $sql_addMaj);
+            $result = mysqli_query($conn, $sql_addMaj);
         }
     }
 
