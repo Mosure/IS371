@@ -100,6 +100,8 @@
         ?>
 
         <?php
+            include('connect.inc.php');
+            
             $id = $_GET['key'];
 
             if ($_POST['updatePost']) {
@@ -108,8 +110,6 @@
                 $new_state = $_POST['state'];
                 $new_zip = $_POST['zip'];
                 $new_email = $_POST['email'];
-
-                include('connect.inc.php');
 
                 $query = "UPDATE alumni SET home_address='$new_street', home_city='$new_city', home_state='$new_state', home_zip='$new_zip', email='$new_email' WHERE alum_id='$id'";
 
