@@ -115,7 +115,7 @@
                     die("Connection failed!");
                 }
 
-                $query = "UPDATE alumni SET home_address=$new_street, home_city=$new_city, home_state=$new_state, home_zip=$new_zip, email=$new_email WHERE alum_id=$id";
+                $query = "UPDATE alumni SET home_address='$new_street', home_city='$new_city', home_state='$new_state', home_zip='$new_zip', email='$new_email' WHERE alum_id='$id'";
 
                 $result = mysqli_query($conn, $query);
 
