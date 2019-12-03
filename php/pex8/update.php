@@ -122,6 +122,9 @@
 
             if ($_POST['add_major_post']) {
                 $maj_id = $_POST['add_major'];
+
+                echo "$maj_id";
+
                 $sql_addMaj = "INSERT INTO alum_majors VALUES ('$id', '$maj_id')";
 
                 $result = mysqli_query($conn, $sql_addMaj);
@@ -133,6 +136,9 @@
 
             if ($_POST['delete_major_post']) {
                 $maj_id = $_POST['add_major'];
+                
+                echo "$maj_id";
+
                 $sql_delMaj = "DELETE FROM alum_majors WHERE alum_id='$id' AND major_id='$maj_id'";
 
                 $result = mysqli_query($conn, $sql_delMaj);
