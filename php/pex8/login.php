@@ -13,6 +13,8 @@
         </form>
 
         <?php
+            session_start();
+            
             include('connect.inc.php');
 
             if ($_POST['login']) {
