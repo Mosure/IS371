@@ -19,7 +19,7 @@
                 $username = $_POST['user'];
                 $password = $_POST['password'];
 
-                $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+                $query = "SELECT * FROM users WHERE users.username = '$username' AND users.password = '$password'";
                 $result = mysqli_query($conn, $query);
 
                 if (!$result) {

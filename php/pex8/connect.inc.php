@@ -10,12 +10,6 @@
         die("Connection failed!");
     }
 
-    if ($_POST['submit1']) {
-        $sql_update = "UPDATE alumni SET home_address='$street', home_city='$city', home_state='$state', home_zip='$zip', email='$email' WHERE alum_id='$id'";
-
-        result = mysqli_query($conn, $sql_update);
-    }
-
     if ($_POST['submit2']) {
         if (isset($_POST['add_major'])) {
             $id = $_POST['id'];
