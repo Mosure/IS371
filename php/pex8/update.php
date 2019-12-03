@@ -125,6 +125,10 @@
                 $sql_addMaj = "INSERT INTO alum_majors VALUES ('$id', '$maj_id')";
 
                 $result = mysqli_query($conn, $sql_addMaj);
+
+                if (!$result) {
+                    die("cannot processed insert query");
+                }
             }
 
             if ($_POST['delete_major_post']) {
@@ -132,6 +136,10 @@
                 $sql_delMaj = "DELETE FROM alum_majors WHERE alum_id='$id' AND major_id='$maj_id'";
 
                 $result = mysqli_query($conn, $sql_delMaj);
+
+                if (!$result) {
+                    die("cannot processed delete query");
+                }
             }
         ?>
 
