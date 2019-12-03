@@ -20,6 +20,8 @@
                 $password = $_POST['password'];
 
                 $query = "SELECT * FROM users WHERE users.username = '$username' AND users.password = '$password'";
+                echo "$query";
+
                 $result = mysqli_query($conn, $query);
 
                 if (!$result) {
