@@ -125,6 +125,6 @@
             }
         ?>
 
-        <a href="/detail.php">Back to Alumni Management</a>
+        <a href="detail.php">Back to Alumni Management</a>
     </body>
 </html>
