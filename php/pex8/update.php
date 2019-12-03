@@ -76,7 +76,22 @@
                     echo "Zip: <input name='zip' type='text' id='zip' value='$home_zip' size='20'><br/>";
                     echo "Email: <input name='email' type='text' id='email' value='$email' size='20'><br/>";
 
-                    echo '<input type="submit" name="updatePost" value="Update"></form>';
+                    echo "<br/><select name='add_major'><option value='' selected>None</option>";
+
+                    $major_query = "SELECT * from major";
+                    $result_majors = mysqli_query($conn, $major_query);
+                    $num_majors = mysqli_num_rows($result_majors);
+
+                    while ($major_row = mysqli_fetch_assoc($result_majors)) {
+                        $title = $major_row['title'];
+                        $majorId = $major_row['major_id'];
+
+                        echo "<option value='$majorId'>$title</option><br/>";
+                    }
+
+                    echo "</select><input type='submit' name='add_major_post' value='Add'><input type='submit' name='delete_major_post' value='Delete'><br/>";
+
+                    echo '</select><input type="submit" name="updatePost" value="Update"></form>';
                 }
             }
             else {
@@ -94,17 +109,7 @@
                 $new_zip = $_POST['zip'];
                 $new_email = $_POST['email'];
 
-                // Pull from conf
-                $myUserName = getenv("DB_USER");
-                $myPassword = getenv("DB_PASSWORD");
-                $myLocalHost = getenv("DB_HOST");
-                $myDB = getenv("DB_NAME");
-
-                $conn = mysqli_connect($myLocalHost, $myUserName, $myPassword, $myDB);
-
-                if (!$conn) {
-                    die("Connection failed!");
-                }
+                include('connect.inc.php');
 
                 $query = "UPDATE alumni SET home_address='$new_street', home_city='$new_city', home_state='$new_state', home_zip='$new_zip', email='$new_email' WHERE alum_id='$id'";
 
@@ -113,6 +118,20 @@
                 if (!$result) {
                     die("cannot processed update query");
                 }
+            }
+
+            if ($_POST['add_major_post']) {
+                $maj_id = $_POST['add_major'];
+                $sql_addMaj = "INSERT INTO alum_majors VALUES ('$id', '$maj_id')";
+
+                $result = mysqli_query($conn, $sql_addMaj);
+            }
+
+            if ($_POST['delete_major_post']) {
+                $maj_id = $_POST['add_major'];
+                $sql_delMaj = "DELETE FROM alum_majors WHERE alum_id='$id' AND major_id='$maj_id'";
+
+                $result = mysqli_query($conn, $sql_delMaj);
             }
         ?>
 
