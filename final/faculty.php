@@ -84,7 +84,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>
+                                <td align='right'>
                                     <h6>
                                         <a href='$email'>
                                             $email
