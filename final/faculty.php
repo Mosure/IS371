@@ -86,7 +86,7 @@
                                 </td>
                                 <td align='right'>
                                     <h4>
-                                        <a href='$email'>
+                                        <a href='mailto:$email'>
                                             $email
                                         </a>
                                     </h4>
