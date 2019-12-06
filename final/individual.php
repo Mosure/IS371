@@ -41,7 +41,7 @@
 					<?php
                         include('connect.inc.php');
 
-                        $id = $_GET['key'];
+                        $id = $_GET['id'];
 
                         $query = "SELECT * FROM faculty, users WHERE faculty.fac_id = '$id' AND faculty.uid = users.user_id";
                         $result = mysqli_query($conn, $query);
