@@ -49,10 +49,10 @@
                         $query_courses = "SELECT * FROM fac_courses WHERE fac_id = '$id' ORDER BY fac_courses.index";
                         $result_courses = mysqli_query($conn, $query_courses);
 
-                        $query_degrees = "SELECT * FROM fac_degrees WHERE fac_id = '$id' ORDER BY fac_courses.index";
+                        $query_degrees = "SELECT * FROM fac_degrees WHERE fac_id = '$id' ORDER BY fac_degrees.index";
                         $result_degrees = mysqli_query($conn, $query_degrees);
 
-                        $query_publications = "SELECT * FROM fac_publications WHERE fac_id = '$id' ORDER BY fac_courses.index";
+                        $query_publications = "SELECT * FROM fac_publications WHERE fac_id = '$id' ORDER BY fac_publications.index";
                         $result_publications = mysqli_query($conn, $query_publications);
 
                         if (!$result) {
