@@ -52,7 +52,7 @@
                         $num = mysqli_num_rows($result);
 
                         if ($num > 0) {
-                            echo "<table>";
+                            echo "<table style='width: 100%;'>";
 
                             $i = 0;
 
