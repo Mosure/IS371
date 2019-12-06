@@ -74,6 +74,7 @@
 								$_SESSION['logABC'] = 'APPLE';
 				
 								$_SESSION['username'] = $row['username'];
+								$_SESSION['admin'] = $row['admin'];
 				
 								echo '<meta http-equiv="refresh" content="0; url=home.php">';
 							} else {
