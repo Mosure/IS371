@@ -46,8 +46,29 @@
                         $query = "SELECT * FROM faculty, users WHERE faculty.fac_id = '$id' AND faculty.uid = users.user_id";
                         $result = mysqli_query($conn, $query);
 
+                        $query_courses = "SELECT * FROM fac_courses WHERE fac_id = '$id' ORDER BY index";
+                        $result_courses = mysqli_query($conn, $query_courses);
+
+                        $query_degrees = "SELECT * FROM fac_degrees WHERE fac_id = '$id' ORDER BY index";
+                        $result_degrees = mysqli_query($conn, $query_degrees);
+
+                        $query_publications = "SELECT * FROM fac_publications WHERE fac_id = '$id' ORDER BY index";
+                        $result_publications = mysqli_query($conn, $query_publications);
+
                         if (!$result) {
                             die("cannot processed select query");
+                        }
+
+                        if (!$result_courses) {
+                            die("cannot processed result_courses query");
+                        }
+
+                        if (!$result_degrees) {
+                            die("cannot processed result_degrees query");
+                        }
+
+                        if (!$result_publications) {
+                            die("cannot processed result_publications query");
                         }
 
                         $num = mysqli_num_rows($result);
@@ -74,6 +95,36 @@
                                 echo "<div>Address:</div>";
                                 echo "<div>$street</div>";
                                 echo "<div>$city, $state $zip</div>";
+
+                                echo "<br/>";
+                                echo "<br/>";
+
+                                echo "<h3>Degrees</h3>";
+
+                                while ($row_degree = mysqli_fetch_assoc($result_degrees)) {
+                                    $name = $row_degree["name"];
+                                    echo "<h4>$name</h4>";
+                                }
+
+                                echo "<br/>";
+                                echo "<br/>";
+
+                                echo "<h3>Publications</h3>";
+
+                                while ($row_publications = mysqli_fetch_assoc($result_publications)) {
+                                    $name = $row_publications["name"];
+                                    echo "<h4>$name</h4>";
+                                }
+
+                                echo "<br/>";
+                                echo "<br/>";
+
+                                echo "<h3>Courses</h3>";
+
+                                while ($row_courses = mysqli_fetch_assoc($result_courses)) {
+                                    $name = $row_courses["name"];
+                                    echo "<h4>$name</h4>";
+                                }
 
                                 echo "<br/>";
                                 echo "<br/>";
