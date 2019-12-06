@@ -74,22 +74,22 @@
                                 echo "
                                 <td>
                                     <div>
-                                        <h4>
+                                        <h3>
                                             <a href='individual.php?id=$fac_id'>
                                                 $prefix $first_name $last_name
                                             </a>
-                                        </h4>
+                                        </h3>
                                         <div>
                                             $position
                                         </div>
                                     </div>
                                 </td>
                                 <td align='right'>
-                                    <h6>
+                                    <h4>
                                         <a href='$email'>
                                             $email
                                         </a>
-                                    </h6>
+                                    </h4>
                                     <div>
                                         $phone
                                     </div>
