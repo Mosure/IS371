@@ -190,8 +190,7 @@
                                 echo "<br/>";
                                 echo "<br/>";
 
-                                echo "<div><a href='edit-fac.php?id=$fac_id'>Edit Info</a></div>";
-                                echo "<div><a href='schedule.php?id=$fac_id'>Schedule an Appointment</a></div>";
+                                echo "<div><a href='individual.php?id=$fac_id'>Go Back</a></div>";
                             }
                         }
                         else {
