@@ -105,10 +105,10 @@
                                     First Name: <input name='first_name' type='text' id='first_name' value='$first_name' size='20'><br/>
                                     Last Name: <input name='last_name' type='text' id='last_name' value='$last_name' size='20'><br/>
                                     Position: <input name='position' type='text' id='position' value='$position' size='20'><br/>
-                                    Street: <input name='street' type='text' id='street' value='$home_address' size='20'><br/>
-                                    City: <input name='city' type='text' id='city' value='$home_city' size='20'><br/>
-                                    State: <input name='state' type='text' id='state' value='$home_state' size='20'><br/>
-                                    Zip: <input name='zip' type='text' id='zip' value='$home_zip' size='20'><br/>
+                                    Street: <input name='street' type='text' id='street' value='$street' size='20'><br/>
+                                    City: <input name='city' type='text' id='city' value='$city' size='20'><br/>
+                                    State: <input name='state' type='text' id='state' value='$state' size='20'><br/>
+                                    Zip: <input name='zip' type='text' id='zip' value='$zip' size='20'><br/>
                                     Email: <input name='email' type='text' id='email' value='$email' size='20'><br/>
                                     Phone: <input name='phone' type='text' id='phone' value='$phone' size='20'><br/>
                                     <input type='submit' name='updatePost' value='Update'>
