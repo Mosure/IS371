@@ -20,7 +20,7 @@
 			<div class="row" style="min-height: 600px;">
 				<div class="col c2 alignleft">
 					<ul class="menu">
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li><a class="current" href="login.php">Login</a></li>
 						<li><a href="faculty.php">Faculty</a></li>
 						<li><a href="appointments.php">Appointments</a></li>

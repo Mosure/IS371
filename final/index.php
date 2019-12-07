@@ -20,7 +20,7 @@
 			<div class="row" style="min-height: 600px;">
 				<div class="col c2 alignleft">
 					<ul class="menu">
-						<li><a class="current" href="index.html">Home</a></li>
+						<li><a class="current" href="index.php">Home</a></li>
 
 						<?php
 							session_start();
