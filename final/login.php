@@ -38,7 +38,7 @@
 						<input type="password" name="password" value="" size=20/>
 						<br/>
 						<br/>
-						<input type="button" name="login" value="Login"/>
+						<input type="submit" name="login" value="Login"/>
 					</form>
 
 					<?php
