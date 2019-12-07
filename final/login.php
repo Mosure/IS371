@@ -76,7 +76,7 @@
 								$_SESSION['username'] = $row['username'];
 								$_SESSION['admin'] = $row['admin'];
 				
-								echo '<meta http-equiv="refresh" content="0; url=home.php">';
+								echo '<meta http-equiv="refresh" content="0; url=index.php">';
 							} else {
 								echo 'Invalid username/password!';
 							}
