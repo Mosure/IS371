@@ -216,6 +216,8 @@
                             if (!$result) {
                                 die("cannot processed insert query");
                             }
+                            
+                            header('Refresh: 0');
                         } elseif ($_POST["addPublication"]) {
                             $sql_add = "INSERT INTO fac_publications (fac_id, fac_publications.name) VALUES ('$id', 'New Item')";
 
@@ -224,6 +226,8 @@
                             if (!$result) {
                                 die("cannot processed insert query");
                             }
+
+                            header('Refresh: 0');
                         } elseif ($_POST["addCourse"]) {
                             $sql_add = "INSERT INTO fac_courses (fac_id, fac_courses.name) VALUES ('$id', 'New Item')";
 
@@ -232,6 +236,8 @@
                             if (!$result) {
                                 die("cannot processed insert query");
                             }
+
+                            header('Refresh: 0');
                         } else {
                             if ($degree_id) {
                                 if ($_POST["deleteDegree"]) {
@@ -242,6 +248,8 @@
                                     if (!$result) {
                                         die("cannot processed delete query");
                                     }
+                            
+                                    header('Refresh: 0');
                                 } elseif ($_POST["updateDegree"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
@@ -253,6 +261,8 @@
                                     if (!$result) {
                                         die("cannot processed update query");
                                     }
+                            
+                                    header('Refresh: 0');
                                 }
                             } elseif ($publication_id) {
                                 if ($_POST["deletePublication"]) {
@@ -263,6 +273,8 @@
                                     if (!$result) {
                                         die("cannot processed delete query");
                                     }
+                            
+                                    header('Refresh: 0');
                                 } elseif ($_POST["updatePublication"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
@@ -274,6 +286,8 @@
                                     if (!$result) {
                                         die("cannot processed update query");
                                     }
+                            
+                                    header('Refresh: 0');
                                 }
                             } elseif ($course_id) {
                                 if ($_POST["deleteCourse"]) {
@@ -284,6 +298,8 @@
                                     if (!$result) {
                                         die("cannot processed delete query");
                                     }
+                            
+                                    header('Refresh: 0');
                                 } elseif ($_POST["updateCourse"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
@@ -295,6 +311,8 @@
                                     if (!$result) {
                                         die("cannot processed update query");
                                     }
+                            
+                                    header('Refresh: 0');
                                 }
                             } elseif ($_POST["updatePost"]) {
                                 $get_user_id = "SELECT * FROM faculty WHERE fac_id = '$id'";
@@ -322,6 +340,8 @@
                                 if (!$result) {
                                     die("cannot processed update query");
                                 }
+                            
+                                header('Refresh: 0');
                             }
                         }
                     ?>
