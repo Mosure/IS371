@@ -216,7 +216,7 @@
                                 die("cannot processed insert query");
                             }
                             
-                            header('Refresh: 0');
+                            header('Refresh: 0.2');
                         } elseif ($_POST["addPublication"]) {
                             $sql_add = "INSERT INTO fac_publications (fac_id, fac_publications.name) VALUES ('$id', 'New Item')";
 
@@ -226,7 +226,7 @@
                                 die("cannot processed insert query");
                             }
 
-                            header('Refresh: 0');
+                            header('Refresh: 0.2');
                         } elseif ($_POST["addCourse"]) {
                             $sql_add = "INSERT INTO fac_courses (fac_id, fac_courses.name) VALUES ('$id', 'New Item')";
 
@@ -236,7 +236,7 @@
                                 die("cannot processed insert query");
                             }
 
-                            header('Refresh: 0');
+                            header('Refresh: 0.2');
                         } else {
                             if ($degree_id) {
                                 if ($_POST["deleteDegree"]) {
@@ -248,7 +248,7 @@
                                         die("cannot processed delete query");
                                     }
                             
-                                    header('Refresh: 0');
+                                    header('Refresh: 0.2');
                                 } elseif ($_POST["updateDegree"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
@@ -261,7 +261,7 @@
                                         die("cannot processed update query");
                                     }
                             
-                                    header('Refresh: 0');
+                                    header('Refresh: 0.2');
                                 }
                             } elseif ($publication_id) {
                                 if ($_POST["deletePublication"]) {
@@ -273,7 +273,7 @@
                                         die("cannot processed delete query");
                                     }
                             
-                                    header('Refresh: 0');
+                                    header('Refresh: 0.2');
                                 } elseif ($_POST["updatePublication"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
@@ -286,7 +286,7 @@
                                         die("cannot processed update query");
                                     }
                             
-                                    header('Refresh: 0');
+                                    header('Refresh: 0.2');
                                 }
                             } elseif ($course_id) {
                                 if ($_POST["deleteCourse"]) {
@@ -298,7 +298,7 @@
                                         die("cannot processed delete query");
                                     }
                             
-                                    header('Refresh: 0');
+                                    header('Refresh: 0.2');
                                 } elseif ($_POST["updateCourse"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
@@ -311,7 +311,7 @@
                                         die("cannot processed update query");
                                     }
                             
-                                    header('Refresh: 0');
+                                    header('Refresh: 0.2');
                                 }
                             } elseif ($_POST["updatePost"]) {
                                 $get_user_id = "SELECT * FROM faculty WHERE fac_id = '$id'";
@@ -340,7 +340,7 @@
                                     die("cannot processed update query");
                                 }
                             
-                                header('Refresh: 0');
+                                header('Refresh: 0.2');
                             }
                         }
                     ?>
