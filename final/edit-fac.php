@@ -296,14 +296,14 @@
                                         die("cannot processed update query");
                                     }
                                 }
-                            } else {
+                            } elseif ($_POST["updatePost"]) {
                                 $get_user_id = "SELECT * FROM faculty WHERE fac_id = '$id'";
                                 $get_result = mysqli_query($conn, $get_user_id);
                                 $row = mysqli_fetch_assoc($get_result)
                                 $user_id = $row["uid"];
 
                                 $position = $_POST['position'];
-                                
+
                                 $update1 = "UPDATE faculty SET position='$position' WHERE fac_id = '$id'";                                
                                 $result = mysqli_query($conn, $update1);
 
