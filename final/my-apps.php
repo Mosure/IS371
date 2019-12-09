@@ -131,7 +131,7 @@
                         if ($_POST["deleteApp"]) {
                             $app_id = $_POST["appointment_id"];
 
-                            $update1 = "UPDATE appointments SET student_id=NULL, appointments.name=NULL WHERE id = '$app_id'";                                
+                            $update1 = "UPDATE appointments SET student_id=NULL, appointments.student_name=NULL WHERE id = '$app_id'";                                
                             $result = mysqli_query($conn, $update1);
 
                             if (!$result) {

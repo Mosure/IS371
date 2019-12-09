@@ -129,7 +129,7 @@
                             $student_id = $_POST["student_id"];
                             $name = $_POST["name"];
 
-                            $update1 = "UPDATE appointments SET student_id='$student_id', appointments.name='$name' WHERE id = '$app_id'";                                
+                            $update1 = "UPDATE appointments SET student_id='$student_id', appointments.student_name='$name' WHERE id = '$app_id'";                                
                             $result = mysqli_query($conn, $update1);
 
                             if (!$result) {
