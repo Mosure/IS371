@@ -131,11 +131,13 @@
                                     $item_id = $row_degree["id"];
                                     $index = $row_degree["index"];
                                     $name = $row_degree["name"];
+                                    $active = $row_degree["active"];
 
                                     echo "
                                     <form action='edit-fac.php?id=$id&degree=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
+                                        <input type='checkbox' name='active' value='$active'> Active<br>
                                         <input type='submit' name='updateDegree' value='Update'>
                                         <input type='submit' name='deleteDegree' value='Delete'>
                                     </form>
@@ -156,11 +158,13 @@
                                     $item_id = $row_publication["id"];
                                     $index = $row_publication["index"];
                                     $name = $row_publication["name"];
+                                    $active = $row_degree["active"];
 
                                     echo "
                                     <form action='edit-fac.php?id=$id&publication=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
+                                        <input type='checkbox' name='active' value='$active'> Active<br>
                                         <input type='submit' name='updatePublication' value='Update'>
                                         <input type='submit' name='deletePublication' value='Delete'>
                                     </form>
@@ -181,11 +185,13 @@
                                     $item_id = $row_course["id"];
                                     $index = $row_course["index"];
                                     $name = $row_course["name"];
+                                    $active = $row_degree["active"];
 
                                     echo "
                                     <form action='edit-fac.php?id=$id&course=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
+                                        <input type='checkbox' name='active' value='$active'> Active<br>
                                         <input type='submit' name='updateCourse' value='Update'>
                                         <input type='submit' name='deleteCourse' value='Delete'>
                                     </form>
@@ -214,7 +220,7 @@
                         $course_id = $_GET['course'];
 
                         if ($_POST["addDegree"]) {
-                            $sql_add = "INSERT INTO fac_degrees (fac_id, fac_degrees.name) VALUES ('$id', 'New Item')";
+                            $sql_add = "INSERT INTO fac_degrees (fac_id, fac_degrees.name, active) VALUES ('$id', 'New Item', 0)";
 
                             $result = mysqli_query($conn, $sql_add);
 
@@ -224,7 +230,7 @@
                             
                             header('Refresh: 0.2');
                         } elseif ($_POST["addPublication"]) {
-                            $sql_add = "INSERT INTO fac_publications (fac_id, fac_publications.name) VALUES ('$id', 'New Item')";
+                            $sql_add = "INSERT INTO fac_publications (fac_id, fac_publications.name, active) VALUES ('$id', 'New Item', 0)";
 
                             $result = mysqli_query($conn, $sql_add);
 
@@ -234,7 +240,7 @@
 
                             header('Refresh: 0.2');
                         } elseif ($_POST["addCourse"]) {
-                            $sql_add = "INSERT INTO fac_courses (fac_id, fac_courses.name) VALUES ('$id', 'New Item')";
+                            $sql_add = "INSERT INTO fac_courses (fac_id, fac_courses.name, active) VALUES ('$id', 'New Item', 0)";
 
                             $result = mysqli_query($conn, $sql_add);
 
@@ -258,8 +264,9 @@
                                 } elseif ($_POST["updateDegree"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
+                                    $active = $_POST['active'];
 
-                                    $sql_update = "UPDATE fac_degrees SET fac_degrees.index='$index', fac_degrees.name='$name' WHERE id = '$degree_id'";
+                                    $sql_update = "UPDATE fac_degrees SET fac_degrees.index='$index', fac_degrees.name='$name', active='$active' WHERE id = '$degree_id'";
 
                                     $result = mysqli_query($conn, $sql_update);
     
@@ -283,8 +290,9 @@
                                 } elseif ($_POST["updatePublication"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
+                                    $active = $_POST['active'];
 
-                                    $sql_update = "UPDATE fac_publications SET fac_publications.index='$index', fac_publications.name='$name' WHERE id = '$publication_id'";
+                                    $sql_update = "UPDATE fac_publications SET fac_publications.index='$index', fac_publications.name='$name', active='$active' WHERE id = '$publication_id'";
 
                                     $result = mysqli_query($conn, $sql_update);
     
@@ -308,8 +316,9 @@
                                 } elseif ($_POST["updateCourse"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
+                                    $active = $_POST['active'];
 
-                                    $sql_update = "UPDATE fac_courses SET fac_courses.index='$index', fac_courses.name='$name' WHERE id = '$course_id'";
+                                    $sql_update = "UPDATE fac_courses SET fac_courses.index='$index', fac_courses.name='$name', active='$active' WHERE id = '$course_id'";
 
                                     $result = mysqli_query($conn, $sql_update);
     
