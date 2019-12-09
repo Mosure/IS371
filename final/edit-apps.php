@@ -121,6 +121,8 @@
                                     $student_id = $row_app["student_id"];
                                     $student_name = $row_app["student_name"];
 
+                                    echo "$start";
+
                                     echo "<form action='edit-apps.php?id=$id&appointment_id=$app_id' method='post'>";
 
                                     echo "
