@@ -53,7 +53,7 @@
                         </form>
                         <br/>
                         <br/>
-                        "
+                        ";
 
                         $query = "SELECT * FROM appointments WHERE student_id = '$id' ORDER BY appointments.start";
                         $result = mysqli_query($conn, $query);
@@ -96,10 +96,10 @@
 
                                 echo "
                                 <td>
-                                    $start
+                                    <input type='datetime-local' id='start' name='start' value='$start' readonly>
                                 </td>
                                 <td align='right'>
-                                    $end
+                                    <input type='datetime-local' id='start' name='start' value='$end' readonly>
                                 </td>
                                 <td>
                                     <form action='my-apps.php?student_id=$id' method='post'>

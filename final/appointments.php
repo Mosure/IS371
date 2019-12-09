@@ -92,10 +92,10 @@
 
                                 echo "
                                 <td>
-                                    $start
+                                    <input type='datetime-local' id='start' name='start' value='$start' readonly>
                                 </td>
                                 <td align='right'>
-                                    $end
+                                    <input type='datetime-local' id='start' name='start' value='$end' readonly>
                                 </td>
                                 <td>
                                     <input type='radio' name='appointment_id' value='$app_id'>

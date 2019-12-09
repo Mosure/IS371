@@ -121,12 +121,15 @@
                                     $student_id = $row_app["student_id"];
                                     $student_name = $row_app["student_name"];
 
+                                    echo "<form action='edit-apps.php?id=$id&appointment_id=$app_id' method='post'>";
+
                                     echo "
+                                    <tr>
                                         <td>
-                                            $start
+                                            <input type='datetime-local' id='start' name='start' value='$start'>
                                         </td>
                                         <td>
-                                            $end
+                                            <input type='datetime-local' id='start' name='start' value='$end'>
                                         </td>
                                         <td>
                                             $student_name
@@ -139,14 +142,15 @@
 
                                     if (!($student_id && $student_name)) {
                                         echo "
-                                        <form action='edit-apps.php?id=$id&appointment_id=$app_id' method='post'>
+                                            <input type='submit' name='updateApp' value='Update'>
                                             <input type='submit' name='deleteApp' value='Delete'>
-                                        </form>
                                         ";
                                     }
 
                                     echo "
                                         </td>
+                                    </tr>
+                                    </form>
                                     ";
                                 }
 
@@ -193,11 +197,11 @@
                                     }
                             
                                     header('Refresh: 0.2');
-                                } elseif ($_POST["updateDegree"]) {
-                                    $index = $_POST['index'];
-                                    $name = $_POST['name'];
+                                } elseif ($_POST["updateApp"]) {
+                                    $start = $_POST["start"];
+                                    $end = $_POST["end"];
 
-                                    $sql_update = "UPDATE fac_degrees SET fac_degrees.index='$index', fac_degrees.name='$name' WHERE id = '$degree_id'";
+                                    $sql_update = "UPDATE appointments SET appointments.start='$start', appointments.end='$end' WHERE id = '$app_id'";
 
                                     $result = mysqli_query($conn, $sql_update);
     

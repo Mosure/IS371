@@ -131,7 +131,7 @@
 
                                 echo "<div><a href='edit-fac.php?id=$fac_id'>Edit Info</a></div>";
                                 echo "<div><a href='edit-apps.php?id=$fac_id'>View Appointments</a></div>";
-                                echo "<hr/><div><a href='appointments.php?id=$fac_id'>Schedule an Appointment</a></div>";
+                                echo "<br/><hr/><br/><div><a href='appointments.php?id=$fac_id'>Schedule an Appointment</a></div>";
                             }
                         }
                         else {
