@@ -137,7 +137,6 @@
                                     <form action='edit-fac.php?id=$id&degree=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
-                                        <input type='hidden' name='active' value='0'>
                                         <input type='checkbox' name='active' value='1' ";
                                         
                                     if ($active == 1) {
@@ -171,7 +170,6 @@
                                     <form action='edit-fac.php?id=$id&publication=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
-                                        <input type='hidden' name='active' value='0'>
                                         <input type='checkbox' name='active' value='1' ";
                                         
                                     if ($active == 1) {
@@ -284,7 +282,7 @@
                                 } elseif ($_POST["updateDegree"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
-                                    $active = $_POST['active'];
+                                    $active = isset($_POST['active']) ? 1 : 0;
 
                                     $sql_update = "UPDATE fac_degrees SET fac_degrees.index='$index', fac_degrees.name='$name', active='$active' WHERE id = '$degree_id'";
 
@@ -310,7 +308,7 @@
                                 } elseif ($_POST["updatePublication"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
-                                    $active = $_POST['active'];
+                                    $active = isset($_POST['active']) ? 1 : 0;
 
                                     $sql_update = "UPDATE fac_publications SET fac_publications.index='$index', fac_publications.name='$name', active='$active' WHERE id = '$publication_id'";
 
@@ -336,7 +334,7 @@
                                 } elseif ($_POST["updateCourse"]) {
                                     $index = $_POST['index'];
                                     $name = $_POST['name'];
-                                    $active = $_POST['active'];
+                                    $active = isset($_POST['active']) ? 1 : 0;
 
                                     $sql_update = "UPDATE fac_courses SET fac_courses.index='$index', fac_courses.name='$name', active='$active' WHERE id = '$course_id'";
 
