@@ -136,6 +136,7 @@
                                         <input type='submit' name='updateDegree' value='Update'>
                                         <input type='submit' name='deleteDegree' value='Delete'>
                                     </form>
+                                    <br/>
                                     ";
                                 }
 
@@ -159,6 +160,7 @@
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
                                         <input type='submit' name='updatePublication' value='Update'>
                                         <input type='submit' name='deletePublication' value='Delete'>
+                                        <br/>
                                     </form>
                                     ";
                                 }
@@ -183,6 +185,7 @@
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
                                         <input type='submit' name='updateCourse' value='Update'>
                                         <input type='submit' name='deleteCourse' value='Delete'>
+                                        <br/>
                                     </form>
                                     ";
                                 }
