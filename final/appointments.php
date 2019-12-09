@@ -87,8 +87,8 @@
                                 }
 
                                 $app_id = $row["id"];
-                                $start = $row["start"];
-                                $end = $row["end"];
+                                $start = date('Y-m-d\TH:i:sP', $row["start"]);
+                                $end = date('Y-m-d\TH:i:sP', $row["end"]);
 
                                 echo "
                                 <td>

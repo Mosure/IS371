@@ -116,12 +116,10 @@
 
                                 while ($row_app = mysqli_fetch_assoc($result_apps)) {
                                     $app_id = $row_app["id"];
-                                    $start = $row_app["start"];
-                                    $end = $row_app["end"];
+                                    $start = date('Y-m-d\TH:i:sP', $row_app["start"]);
+                                    $end = date('Y-m-d\TH:i:sP', $row_app["end"]);
                                     $student_id = $row_app["student_id"];
                                     $student_name = $row_app["student_name"];
-
-                                    echo "$start";
 
                                     echo "<form action='edit-apps.php?id=$id&appointment_id=$app_id' method='post'>";
 
