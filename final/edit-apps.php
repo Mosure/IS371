@@ -55,7 +55,7 @@
                         $query = "SELECT * FROM faculty, users WHERE faculty.fac_id = '$id' AND faculty.uid = users.user_id";
                         $result = mysqli_query($conn, $query);
 
-                        $query_apps = "SELECT * FROM appointments WHERE fac_id = '$id' ORDER BY appointments.start";
+                        $query_apps = "SELECT *, DATE_FORMAT(appointments.start, '%Y-%m-%dT%H:%i') AS appointments.start, DATE_FORMAT(appointments.end, '%Y-%m-%dT%H:%i') AS appointments.end FROM appointments WHERE fac_id = '$id' ORDER BY appointments.start";
                         $result_apps = mysqli_query($conn, $query_apps);
 
                         if (!$result) {
@@ -116,8 +116,8 @@
 
                                 while ($row_app = mysqli_fetch_assoc($result_apps)) {
                                     $app_id = $row_app["id"];
-                                    $start = date('c', strtotime($row_app["start"]));
-                                    $end = date('c', strtotime($row_app["end"]));
+                                    $start = $row_app["start"];
+                                    $end = $row_app["end"];
                                     $student_id = $row_app["student_id"];
                                     $student_name = $row_app["student_name"];
 
