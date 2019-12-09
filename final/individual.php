@@ -73,6 +73,10 @@
                         }
 
                         $num = mysqli_num_rows($result);
+                        $num_courses = mysqli_num_rows($result_courses);
+                        $num_degrees = mysqli_num_rows($result_degrees);
+                        $num_publications = mysqli_num_rows($result_publications);
+
 
                         if ($num > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -100,35 +104,41 @@
                                 echo "<br/>";
                                 echo "<br/>";
 
-                                echo "<h3>Degrees</h3>";
+                                if ($num_degrees > 0) {
+                                    echo "<h3>Degrees</h3>";
 
-                                while ($row_degree = mysqli_fetch_assoc($result_degrees)) {
-                                    $name = $row_degree["name"];
-                                    echo "<p>$name</p>";
+                                    while ($row_degree = mysqli_fetch_assoc($result_degrees)) {
+                                        $name = $row_degree["name"];
+                                        echo "<p>$name</p>";
+                                    }
+
+                                    echo "<br/>";
+                                    echo "<br/>";
                                 }
 
-                                echo "<br/>";
-                                echo "<br/>";
+                                if ($num_publications > 0) {
+                                    echo "<h3>Publications</h3>";
 
-                                echo "<h3>Publications</h3>";
+                                    while ($row_publications = mysqli_fetch_assoc($result_publications)) {
+                                        $name = $row_publications["name"];
+                                        echo "<p>$name</p>";
+                                    }
 
-                                while ($row_publications = mysqli_fetch_assoc($result_publications)) {
-                                    $name = $row_publications["name"];
-                                    echo "<p>$name</p>";
+                                    echo "<br/>";
+                                    echo "<br/>";
                                 }
 
-                                echo "<br/>";
-                                echo "<br/>";
+                                if ($num_courses > 0) {
+                                    echo "<h3>Courses</h3>";
 
-                                echo "<h3>Courses</h3>";
+                                    while ($row_courses = mysqli_fetch_assoc($result_courses)) {
+                                        $name = $row_courses["name"];
+                                        echo "<p>$name</p>";
+                                    }
 
-                                while ($row_courses = mysqli_fetch_assoc($result_courses)) {
-                                    $name = $row_courses["name"];
-                                    echo "<p>$name</p>";
+                                    echo "<br/>";
+                                    echo "<br/>";
                                 }
-
-                                echo "<br/>";
-                                echo "<br/>";
 
                                 echo "<div><a href='edit-fac.php?id=$fac_id'>Edit Info</a></div>";
                                 echo "<div><a href='edit-apps.php?id=$fac_id'>Edit Appointments</a></div>";
