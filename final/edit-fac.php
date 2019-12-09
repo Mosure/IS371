@@ -22,6 +22,7 @@
 					<ul class="menu">
 						<li><a href="index.php">Home</a></li>
                         
+						<li><a href="career.php">Career</a></li>
 						<li><a class="current" href="faculty.php">Faculty</a></li>
                         <li><a href="my-apps.php">My Appointments</a></li>
 
