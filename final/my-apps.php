@@ -55,7 +55,7 @@
                         <br/>
                         ";
 
-                        $query = "SELECT * FROM appointments WHERE student_id = '$id' ORDER BY appointments.start";
+                        $query = "SELECT *, DATE_FORMAT(appointments.end, '%Y-%m-%dT%H:%i') AS end_mod, DATE_FORMAT(appointments.start, '%Y-%m-%dT%H:%i') AS start_mod FROM appointments WHERE student_id = '$id' ORDER BY appointments.start";
                         $result = mysqli_query($conn, $query);
 
                         if (!$result) {
@@ -91,8 +91,8 @@
                                 }
 
                                 $app_id = $row["id"];
-                                $start = date('Y-m-d\TH:i:sP', $row["start"]);
-                                $end = date('Y-m-d\TH:i:sP', $row["end"]);
+                                $start = $row["start_mod"];
+                                $end = $row["end_mod"];
 
                                 echo "
                                 <td>

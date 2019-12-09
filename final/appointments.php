@@ -45,7 +45,7 @@
 
                         $id = $_GET['id'];
 
-                        $query = "SELECT * FROM appointments WHERE fac_id = '$id' AND (student_id IS NULL OR student_name IS NULL) ORDER BY appointments.start";
+                        $query = "SELECT *, DATE_FORMAT(appointments.end, '%Y-%m-%dT%H:%i') AS end_mod, DATE_FORMAT(appointments.start, '%Y-%m-%dT%H:%i') AS start_mod FROM appointments WHERE fac_id = '$id' AND (student_id IS NULL OR student_name IS NULL) ORDER BY appointments.start";
                         $result = mysqli_query($conn, $query);
 
                         if (!$result) {
@@ -87,8 +87,8 @@
                                 }
 
                                 $app_id = $row["id"];
-                                $start = date('Y-m-d\TH:i:sP', $row["start"]);
-                                $end = date('Y-m-d\TH:i:sP', $row["end"]);
+                                $start = $row["start_mod"];
+                                $end = $row["end_mod"];
 
                                 echo "
                                 <td>
@@ -109,7 +109,8 @@
 
                             echo "
                                 </table>
-                                <input type='submit' name='updatePost' value='Update'>
+                                <br/>
+                                <input type='submit' name='updatePost' value='Schedule'>
                             </form>";
                         }
                         else {
