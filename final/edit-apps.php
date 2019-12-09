@@ -123,8 +123,13 @@
 
                                     echo "<form action='edit-apps.php?id=$id&appointment_id=$app_id' method='post'>";
 
+                                    if (($i % 2) == 0) {
+                                        echo "<tr style='border-bottom: 1px solid #ccc;'>";
+                                    } else {
+                                        echo "<tr bgcolor='#ddd' style='border-bottom: 1px solid #ccc;'>";
+                                    }
+
                                     echo "
-                                    <tr>
                                         <td>
                                             <input type='datetime-local' id='start' name='start' value='$start'>
                                         </td>
