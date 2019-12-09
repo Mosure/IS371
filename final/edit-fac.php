@@ -137,7 +137,14 @@
                                     <form action='edit-fac.php?id=$id&degree=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
-                                        <input type='checkbox' name='active' value='$active'> Active<br>
+                                        <input type='hidden' name='active' value='0'>
+                                        <input type='checkbox' name='active' value='1' ";
+                                        
+                                    if ($active == 1) {
+                                        echo "checked='checked'";
+                                    }
+
+                                    echo "> Active<br>
                                         <input type='submit' name='updateDegree' value='Update'>
                                         <input type='submit' name='deleteDegree' value='Delete'>
                                     </form>
@@ -164,7 +171,14 @@
                                     <form action='edit-fac.php?id=$id&publication=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
-                                        <input type='checkbox' name='active' value='$active'> Active<br>
+                                        <input type='hidden' name='active' value='0'>
+                                        <input type='checkbox' name='active' value='1' ";
+                                        
+                                    if ($active == 1) {
+                                        echo "checked='checked'";
+                                    }
+
+                                    echo "> Active<br>
                                         <input type='submit' name='updatePublication' value='Update'>
                                         <input type='submit' name='deletePublication' value='Delete'>
                                     </form>
@@ -191,7 +205,13 @@
                                     <form action='edit-fac.php?id=$id&course=$item_id' method='post'>
                                         Index: <input name='index' type='text' id='index' value='$index' size='20'><br/>
                                         Name: <input name='name' type='text' id='name' value='$name' size='20'><br/>
-                                        <input type='checkbox' name='active' value='$active'> Active<br>
+                                        <input type='checkbox' name='active' value='1' ";
+                                    
+                                    if ($active == 1) {
+                                        echo "checked='checked'";
+                                    }
+
+                                    echo "> Active<br>
                                         <input type='submit' name='updateCourse' value='Update'>
                                         <input type='submit' name='deleteCourse' value='Delete'>
                                     </form>
