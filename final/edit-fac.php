@@ -164,7 +164,7 @@
                                     $item_id = $row_publication["id"];
                                     $index = $row_publication["index"];
                                     $name = $row_publication["name"];
-                                    $active = $row_degree["active"];
+                                    $active = $row_publication["active"];
 
                                     echo "
                                     <form action='edit-fac.php?id=$id&publication=$item_id' method='post'>
@@ -197,7 +197,7 @@
                                     $item_id = $row_course["id"];
                                     $index = $row_course["index"];
                                     $name = $row_course["name"];
-                                    $active = $row_degree["active"];
+                                    $active = $row_course["active"];
 
                                     echo "
                                     <form action='edit-fac.php?id=$id&course=$item_id' method='post'>
