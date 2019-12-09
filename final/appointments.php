@@ -137,7 +137,7 @@
                             }
                         
                             echo "Scheduled appointment! Redirecting";
-                            echo "<meta http-equiv='refresh' content='0.5; url=my-apps.php?id=$student_id'>";
+                            echo "<meta http-equiv='refresh' content='0.5; url=my-apps.php?student_id=$student_id'>";
                         }
                     ?>
 				</div>
