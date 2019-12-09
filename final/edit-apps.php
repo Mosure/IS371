@@ -129,7 +129,7 @@
                                             <input type='datetime-local' id='start' name='start' value='$start'>
                                         </td>
                                         <td>
-                                            <input type='datetime-local' id='start' name='start' value='$end'>
+                                            <input type='datetime-local' id='end' name='end' value='$end'>
                                         </td>
                                         <td>
                                             $student_name
@@ -174,8 +174,8 @@
                         $app_id = $_GET['appointment_id'];
 
                         if ($_POST["addApp"]) {
-                            $start = $_POST["start"];
-                            $end = $_POST["end"];
+                            $start = date_default_timezone_get();
+                            $end = date_default_timezone_get();
 
                             $sql_add = "INSERT INTO appointments (fac_id, appointments.start, appointments.end) VALUES ('$id', '$start', '$end')";
 
