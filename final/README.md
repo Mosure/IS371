@@ -55,6 +55,7 @@ Navigate to the faculty member you wish to have an appointment with (as seen abo
 ![Image of Yaktocat](https://raw.githubusercontent.com/Mosure/IS371/master/final/documentation/appointment-schedule.png)
 
 ## Database ER
+A database backup can be found at `./database.sql`.
 ![Image of Yaktocat](https://raw.githubusercontent.com/Mosure/IS371/master/final/documentation/er.png)
 
 
