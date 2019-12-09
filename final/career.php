@@ -41,11 +41,11 @@
 				<div class="col c8">
 					<h2>Career Center</h2>
 					<p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor sapien, pulvinar eget neque a, ultrices tristique nisi. Aenean ultrices cursus enim et imperdiet. Nam nec velit ut magna elementum viverra. Proin hendrerit felis nec iaculis congue. Praesent congue, massa sed hendrerit convallis, neque elit fermentum nisi, non volutpat leo quam at nisi. Phasellus congue lacus venenatis, viverra eros ac, pellentesque velit. Aliquam erat volutpat. Mauris vitae ligula nec ipsum congue egestas id feugiat enim. Sed fringilla quis neque eget laoreet. Sed at lorem et odio posuere blandit eget ut augue. Proin ante neque, molestie eu ullamcorper dignissim, aliquet vitae nunc. Praesent pulvinar luctus auctor. Proin ante magna, laoreet sed molestie eget, placerat quis nisl.
-                    </p>
+						Career Services at UW-Madison are organized and delivered through individual schools/colleges. Each office listed below provides comprehensive career services for students and employer relations. The Career Services Council provides leadership and coordination between career resources on campus.
+					</p>
 
                     <p>
-                        Quisque non ligula augue. Maecenas aliquet sapien ac maximus commodo. Mauris felis lacus, pharetra id nulla eget, commodo lobortis magna. Nulla in facilisis purus. Nulla rhoncus dui et placerat finibus. Sed sollicitudin venenatis ligula nec mattis. Integer at nisi ut tortor hendrerit varius. Pellentesque feugiat ex eu sapien elementum tristique nec sed orci. Cras vel pulvinar nibh, vel fermentum erat. In hac habitasse platea dictumst.
+						Whether you are a student, employer, or UW-Madison faculty or staff member there are resources, events, and connections available to you.
                     </p>
 				</div>
 			</div>
