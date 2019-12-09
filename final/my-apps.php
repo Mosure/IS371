@@ -56,7 +56,7 @@
                         <br/>
                         ";
 
-                        $query = "SELECT *, DATE_FORMAT(appointments.end, '%Y-%m-%dT%H:%i') AS end_mod, DATE_FORMAT(appointments.start, '%Y-%m-%dT%H:%i') AS start_mod FROM appointments WHERE student_id = '$id' ORDER BY appointments.start";
+                        $query = "SELECT *, DATE_FORMAT(appointments.end, '%Y-%m-%dT%H:%i') AS end_mod, DATE_FORMAT(appointments.start, '%Y-%m-%dT%H:%i') AS start_mod FROM appointments, faculty, users WHERE student_id = '$id' AND appointments.fac_id = faculty.fac_id AND faculty.uid = users.user_id ORDER BY appointments.start";
                         $result = mysqli_query($conn, $query);
 
                         if (!$result) {
@@ -75,6 +75,9 @@
                             echo "
                             <tr>
                                 <td>
+                                    Faculty
+                                </td>
+                                <td>
                                     Start
                                 </td>
                                 <td>
@@ -92,10 +95,16 @@
                                 }
 
                                 $app_id = $row["id"];
+                                $prefix = $row["prefix"];
+                                $first_name = $row["first_name"];
+                                $last_name = $row["last_name"];
                                 $start = $row["start_mod"];
                                 $end = $row["end_mod"];
 
                                 echo "
+                                <td>
+                                    $prefix $first_name $last_name
+                                </td>
                                 <td>
                                     <input type='datetime-local' id='start' name='start' value='$start' readonly>
                                 </td>
