@@ -104,7 +104,7 @@
 
                                 while ($row_degree = mysqli_fetch_assoc($result_degrees)) {
                                     $name = $row_degree["name"];
-                                    echo "<h4>$name</h4>";
+                                    echo "<p>$name</p>";
                                 }
 
                                 echo "<br/>";
@@ -114,7 +114,7 @@
 
                                 while ($row_publications = mysqli_fetch_assoc($result_publications)) {
                                     $name = $row_publications["name"];
-                                    echo "<h4>$name</h4>";
+                                    echo "<p>$name</p>";
                                 }
 
                                 echo "<br/>";
@@ -124,7 +124,7 @@
 
                                 while ($row_courses = mysqli_fetch_assoc($result_courses)) {
                                     $name = $row_courses["name"];
-                                    echo "<h4>$name</h4>";
+                                    echo "<p>$name</p>";
                                 }
 
                                 echo "<br/>";
