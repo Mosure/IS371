@@ -116,6 +116,7 @@
 
                             echo "
                                 </table>
+                                <br/>
                                 <input type='submit' name='updatePost' value='Update'>
                             </form>";
                         }
