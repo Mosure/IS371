@@ -22,8 +22,8 @@
 					<ul class="menu">
 						<li><a href="index.php">Home</a></li>
                         
-						<li><a class="current" href="faculty.php">Faculty</a></li>
-						<li><a href="my-apps.php">My Appointments</a></li>
+						<li><a href="faculty.php">Faculty</a></li>
+                        <li><a class="current" href="my-apps.php">My Appointments</a></li>
 
                         <?php
 							session_start();
@@ -38,14 +38,24 @@
 				</div>
 		
 				<div class="col c8">
-					<h2>Schedule an Appointment</h2>
+					<h2>My Appointments</h2>
+
 					<?php
                         session_start();
                         include('connect.inc.php');
 
-                        $id = $_GET['id'];
+                        $id = $_GET['student_id'];
 
-                        $query = "SELECT * FROM appointments WHERE fac_id = '$id' AND (student_id IS NULL OR student_name IS NULL) ORDER BY appointments.start";
+                        echo "
+                        <form>
+                            <input name='student_id' type='text' id='student_id' value='$id'>
+                            <input type='submit' name='getStudent' value='View'>
+                        </form>
+                        <br/>
+                        <br/>
+                        "
+
+                        $query = "SELECT * FROM appointments WHERE student_id = '$id' ORDER BY appointments.start";
                         $result = mysqli_query($conn, $query);
 
                         if (!$result) {
@@ -56,12 +66,6 @@
 
                         if ($num > 0) {
                             echo "
-                            <form action='appointments.php?id=$id' method='post'>
-                                Name
-                                <input name='name' type='text' id='name' size='20'><br/><br/>
-                                Last 5 Digits of Student ID
-                                <input name='student_id' type='text' id='student_id' size='20'><br/></br>
-
                                 <table style='width: 100%;' cellspacing='0'>
                             ";
 
@@ -98,7 +102,10 @@
                                     $end
                                 </td>
                                 <td>
-                                    <input type='radio' name='appointment_id' value='$app_id'>
+                                    <form action='my-apps.php?student_id=$id' method='post'>
+                                        <input name='appointment_id' type='hidden' id='appointment_id' value='$app_id'>
+                                        <input type='submit' name='deleteApp' value='Delete'>
+                                    </form>
                                 </td>
                                 ";
 
@@ -121,22 +128,22 @@
                         session_start();
                         include('connect.inc.php');
 
-                        $id = $_GET['id'];
-
-                        if ($_POST["updatePost"]) {
+                        if ($_POST["deleteApp"]) {
                             $app_id = $_POST["appointment_id"];
-                            $student_id = $_POST["student_id"];
-                            $name = $_POST["name"];
 
-                            $update1 = "UPDATE appointments SET student_id='$student_id', appointments.name='$name' WHERE id = '$app_id'";                                
+                            $update1 = "UPDATE appointments SET student_id=NULL, appointments.name=NULL WHERE id = '$app_id'";                                
                             $result = mysqli_query($conn, $update1);
 
                             if (!$result) {
                                 die("cannot processed update query");
                             }
                         
-                            echo "Scheduled appointment! Redirecting";
-                            echo "<meta http-equiv='refresh' content='0.5; url=my-apps.php?id=$student_id'>";
+                            echo "Appointment Deleted!";
+                            header('Refresh: 0.2');
+                        } elseif ($_POST["getStudent"]) {
+                            $student_id = $_POST["student_id"];
+
+                            echo "<meta http-equiv='refresh' content='0; url=my-apps.php?id=$student_id'>";
                         }
                     ?>
 				</div>

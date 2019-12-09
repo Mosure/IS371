@@ -21,7 +21,10 @@
 				<div class="col c2 alignleft">
 					<ul class="menu">
 						<li><a href="index.php">Home</a></li>
-                        
+
+						<li><a class="current" href="faculty.php">Faculty</a></li>
+                        <li><a href="my-apps.php">My Appointments</a></li>
+
                         <?php
 							session_start();
 
@@ -31,9 +34,6 @@
 								echo "<li><a href=\"logout.php\">Logout</a></li>";
 							}
 						?>
-
-						<li><a class="current" href="faculty.php">Faculty</a></li>
-						<li><a href="appointments.php">Appointments</a></li>
 					</ul>
 				</div>
 		
