@@ -116,8 +116,8 @@
 
                                 while ($row_app = mysqli_fetch_assoc($result_apps)) {
                                     $app_id = $row_app["id"];
-                                    $start = date('Y-m-d\TH:i:sP', $row_app["start"]);
-                                    $end = date('Y-m-d\TH:i:sP', $row_app["end"]);
+                                    $start = date('c', strtotime($row_app["start"]));
+                                    $end = date('c', strtotime($row_app["end"]));
                                     $student_id = $row_app["student_id"];
                                     $student_name = $row_app["student_name"];
 
